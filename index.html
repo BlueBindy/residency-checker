@@ -19,17 +19,17 @@
         <p>To be eligible, you need to have accrued sufficient days in the Republic of Ireland within the last 9 years. 
             Any hours present in Ireland during a day count, so include departure and arrival days as present. 
             Full days in Northern Ireland, or elsewhere in the UK do NOT count as present in the Republic of Ireland.</p>
-        <form action="" method="post">
+       <!-- <form action="" method="post">-->
             <div class="days-data">
             <!--Current year is required input, subsequent years are not; maximum days to include leap year-->
             <label for="current-year">Current Year</label>
             <span>
-                <input name="current-year" id="current-year" type="number" min="0" max="366" required></input>
+                <input  name="current-year" id="current-year" type="number" min="0" max="366" required></input>
             </div>
         <div class="days-data">
             <label for="current-minusone">Current year minus one</label>
             <span>
-                <input name="current-minusone" id="current-minusone" type="number" min="0" max="366"></input>
+                <input  name="current-minusone" id="current-minusone" type="number" min="0" max="366"></input>
             </span>
         </div>
         <div class="days-data">
@@ -74,15 +74,24 @@
         </div>
         <div class="days-data">
             <label for="current-minuseight">Current year minus eight</label>
-            <span>
+        <span>
                 <input name="current-minusseight" id="current-minuseight" type="number" min="0" max="366">
                 </input>
-                <span>
+            </span>     
         </div>
         <div class="days-data">
             <label for="current-minusnine">Current year minus nine</label>
             <span>
                 <input name="current-minusnine" id="current-minusnine" type="number" min="0" max="366">
+                </input> 
+            </span>
+                </div>
+                
+        </div>
+        <div class="days-data">
+            <label for="total-days">Total days</label>
+            <span>
+                <input name="total-days" id="total-days" type="number" min="0">
                 </input>
                 <span>
         </div>
@@ -100,13 +109,18 @@
         <div class="submit">
             <input type="submit" value="Submit">
         </div>
+        <!--User confirmation added to reset button placed next to submit to improve UX-->
         <div class="reset">
-            <input type="reset" id="reset-button" onclick="return checkReset()" value="Clear everything I've entered">
+            <input type="reset" id="reset-button" onclick="return checkReset()"  value="Clear everything I've entered">
         </div>
-    </form>
+    
+   <!-- </form> -->
     </section>
     <section class="results">
         <h3>Great! Here's a summary of your readiness to apply:</h3>
+        <p>Your total residency results</p>
+        <p>Your final year residency results</p>
+        <p>Do you have eligible residency to apply?</p>
         
     </section>
 
