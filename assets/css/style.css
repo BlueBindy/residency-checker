@@ -1,0 +1,13 @@
+/*Google fonts link Roboto Condensed Light 300*/
+ @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap'); 
+
+body{
+    text-align: center;
+    font-family: 'Roboto Condensed', sans-serif;
+    background-color: whitesmoke;
+}
+
+p {
+    max-width: 65%;
+    margin: auto;
+}
