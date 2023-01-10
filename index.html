@@ -12,126 +12,128 @@
 <body>
     <header class="header">
         <h1>Residency Checker</h1>
-        <p>Are you a British citizen looking to apply for Irish naturalisation through residency? You can check your residency period here to see if you qualify yet.</p>
-        <p>To be eligible, you need to have accrued sufficient days of residency in the Republic of Ireland within the last 3,287 days (9 years). 
-            Any hours present during a day in Ireland allow you to count that day, so include departure and arrival days. 
+        <p>Are you a British citizen looking to apply for Irish naturalisation through residency? You can check your
+            residency period here to see if you qualify yet.</p>
+        <p>To be eligible, you need to have accrued sufficient days of residency in the Republic of Ireland within the
+            last 3,287 days (9 years).
+            Any hours present during a day in Ireland allow you to count that day, so include departure and arrival
+            days.
             Full days in Northern Ireland, or elsewhere in the UK, or in any other country cannot be included.</p>
-            <p><b>In addition </b> to total residential days, you will <b>also </b> need to meet the final year 'continuous residency'
-                requirement. You can check that below as well. Scroll down for a summary of your eligibility. </p>
+        <p><b>In addition </b> to total residential days, you will <b>also </b> need to meet the final year 'continuous
+            residency'
+            requirement. You can check that below as well. Scroll down for a summary of your eligibility. </p>
     </header>
-    
+
     <section class="total-residence">
         <h3>Enter your days of residency by calendar year here:</h3>
-        
-       <!-- <form action="" method="post">-->
-        <div class="days-section">
-            <div class="days-data">
-            <!--Current year is required input, subsequent years are not; maximum days to include leap year-->
-            <label for="current-year">Current Year</label>
-            <span>
-                <input  name="current-year" id="current-year" type="number" min="0" max="366" required></input>
-            </div>
-        <div class="days-data">
-            <label for="current-minusone">Current year minus one</label>
-            <span>
-                <input  name="current-minusone" id="current-minusone" type="number" min="0" max="366"></input>
-            </span>
-        </div>
-        <div class="days-data">
-            <label for="current-minustwo">Current year minus two</label>
-            <span>
-                <input name="current-minustwo" id="current-minustwo" type="number" min="0" max="366"></input>
-            </span>
-        </div>
-        <div class="days-data">
-            <label for="current-minusthree">Current year minus three</label>
-            <span>
-                <input name="current-minusthree" id="current-minusthree" type="number" min="0" max="366">
-                </input>
-                <span>
-                </div>
-        <div class="days-data">
-            <label for="current-minusfour">Current year minus four</label>
-                <input name="current-minusfour" id="current-minusfour" type="number" min="0" max="366">
-                </input>
-                <span>
-        </div>
-        <div class="days-data">
-            <label for="current-minusfive">Current year minus five</label>
-            <span>
-                <input name="current-minusfive" id="current-minusfive" type="number" min="0" max="366">
-                </input>
-                <span>
-        </div>
-        <div class="days-data">
-            <label for="current-minussix">Current year minus six</label>
-            <span>
-                <input name="current-minussix" id="current-minussix" type="number" min="0" max="366">
-                </input>
-                <span>
-        </div>
-        <div class="days-data">
-            <label for="current-minusseven">Current year minus seven</label>
-            <span>
-                <input name="current-minusseven" id="current-minusseven" type="number" min="0" max="366">
-                </input>
-                <span>
-        </div>
-        <div class="days-data">
-            <label for="current-minuseight">Current year minus eight</label>
-        <span>
-                <input name="current-minusseight" id="current-minuseight" type="number" min="0" max="366">
-                </input>
-            </span>     
-        </div>
-        <div class="days-data">
-            <label for="current-minusnine">Current year minus nine</label>
-            <span>
-                <input name="current-minusnine" id="current-minusnine" type="number" min="0" max="366">
-                </input> 
-            </span>
-                </div>
-                
-        
-        <div class="days-data">
-            <label for="total-days">Total days</label>
-            <span>
-                <input name="total-days" id="total-days" type="number" min="0">
-                </input>
-                <span>
-        </div>
-    </div>
-    </div>
-        <h3>Enter your residential days in the last 365 days below (even if that extends back to the previous 
-            calendar year) to check for 'continuous residency'.</h3>
-        
-<div class="days-section">
-        <div class="final-year">
-            
-            <label for="continuous-residency">Final year</label>
-            <span>
-                <input name="continuous-residency" id="continuous-residency" type="number" min="0" max="366">
-                </input>
-                <span>
-                </div>
-            </div>
-        <!--User confirmation added to reset button placed next to submit to improve UX-->
-        <div class="reset">
-            <input type="reset" id="reset-button" onclick="return checkReset()"  value="Clear everything I've entered">
-        </div>
-    
 
-       <!-- <div class="submit">
+        <form action="" method="post">
+            <div class="days-section">
+                <div class="days-data">
+                    <!--Current year is required input, subsequent years are not; maximum days to include leap year-->
+                    <label for="current-year">Current Year</label>
+                    <span>
+                        <input name="current-year" id="current-year" type="number" min="0" max="366" required></input>
+                </div>
+                <div class="days-data">
+                    <label for="current-minusone">Current year minus one</label>
+                    <span>
+                        <input name="current-minusone" id="current-minusone" type="number" min="0" max="366"></input>
+                    </span>
+                </div>
+                <div class="days-data">
+                    <label for="current-minustwo">Current year minus two</label>
+                    <span>
+                        <input name="current-minustwo" id="current-minustwo" type="number" min="0" max="366"></input>
+                    </span>
+                </div>
+                <div class="days-data">
+                    <label for="current-minusthree">Current year minus three</label>
+                    <span>
+                        <input name="current-minusthree" id="current-minusthree" type="number" min="0" max="366">
+                        </input>
+                        <span>
+                </div>
+                <div class="days-data">
+                    <label for="current-minusfour">Current year minus four</label>
+                    <input name="current-minusfour" id="current-minusfour" type="number" min="0" max="366">
+                    </input>
+                    <span>
+                </div>
+                <div class="days-data">
+                    <label for="current-minusfive">Current year minus five</label>
+                    <span>
+                        <input name="current-minusfive" id="current-minusfive" type="number" min="0" max="366">
+                        </input>
+                        <span>
+                </div>
+                <div class="days-data">
+                    <label for="current-minussix">Current year minus six</label>
+                    <span>
+                        <input name="current-minussix" id="current-minussix" type="number" min="0" max="366">
+                        </input>
+                        <span>
+                </div>
+                <div class="days-data">
+                    <label for="current-minusseven">Current year minus seven</label>
+                    <span>
+                        <input name="current-minusseven" id="current-minusseven" type="number" min="0" max="366">
+                        </input>
+                        <span>
+                </div>
+                <div class="days-data">
+                    <label for="current-minuseight">Current year minus eight</label>
+                    <span>
+                        <input name="current-minusseight" id="current-minuseight" type="number" min="0" max="366">
+                        </input>
+                    </span>
+                </div>
+                <div class="days-data">
+                    <label for="current-minusnine">Current year minus nine</label>
+                    <span>
+                        <input name="current-minusnine" id="current-minusnine" type="number" min="0" max="366">
+                        </input>
+                    </span>
+                </div>
+
+
+                <div class="days-data">
+                    <label for="total-days">Total days</label>
+                    <span>
+                        <input name="total-days" id="total-days" type="number" min="0">
+                        </input>
+                        <span>
+                </div>
+            </div>
+            </div>
+            <h3>Enter your residential days within the last 365 days below (even if that extends back to the previous
+                calendar year) to check for 'continuous residency'.</h3>
+
+            <div class="days-section">
+                <div class="final-year">
+                    <label for="continuous-residency">Final year</label>
+                    <span>
+                        <input name="continuous-residency" id="continuous-residency" type="number" min="0" max="366">
+                        </input> <span>
+                            <!--User confirmation added to reset button placed next to submit to improve UX-->
+                            <input type="reset" id="reset-button" onclick="return checkReset();"
+                                value="Clear everything I've entered">
+
+                </div>
+            </div>
+
+
+            <!-- <div class="submit">
             <input type="submit" value="Submit">
         </div> -->
-   <!-- </form> -->
+        </form>
     </section>
     <section class="results">
         <h3>Great! Here's a summary of your readiness to apply:</h3>
         <p>Your total residency results</p>
         <p>Your final year residency results</p>
         <p>Do you have eligible residency to apply?</p>
-        
+
     </section>
 
     <script src="assets/js/script.js"></script>
