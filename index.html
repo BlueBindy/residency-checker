@@ -14,12 +14,14 @@
         <h1>Residency Checker</h1>
         <p>Are you a Brit looking to apply for Irish naturalisation? You can check your residency dates here to see if you are eligble.</p>
     </header>
+    
     <section class="total-residence">
         <h3>Check your total residency here</h3>
         <p>To be eligible, you need to have accrued sufficient days in the Republic of Ireland within the last 9 years. 
             Any hours present in Ireland during a day count, so include departure and arrival days as present. 
             Full days in Northern Ireland, or elsewhere in the UK do NOT count as present in the Republic of Ireland.</p>
        <!-- <form action="" method="post">-->
+        <div class="days-section">
             <div class="days-data">
             <!--Current year is required input, subsequent years are not; maximum days to include leap year-->
             <label for="current-year">Current Year</label>
@@ -87,7 +89,7 @@
             </span>
                 </div>
                 
-        </div>
+        
         <div class="days-data">
             <label for="total-days">Total days</label>
             <span>
@@ -95,10 +97,12 @@
                 </input>
                 <span>
         </div>
+    </div>
+    </div>
         <h3>Check your final year residency here</h3>
         <p>In addition to days in total, you will also need to meet the final year 'continuous residency'
             requirement. You can check that here. </p>
-
+<div class="days-section">
         <div class="final-year">
             
             <label for="continuous-residency">Final year</label>
@@ -106,11 +110,14 @@
                 <input name="continuous-residency" id="continuous-residency" type="number" min="0" max="366">
                 </input>
                 <span>
-        </div>
+                </div>
+            </div>
         <!--User confirmation added to reset button placed next to submit to improve UX-->
         <div class="reset">
             <input type="reset" id="reset-button" onclick="return checkReset()"  value="Clear everything I've entered">
         </div>
+    
+
        <!-- <div class="submit">
             <input type="submit" value="Submit">
         </div> -->

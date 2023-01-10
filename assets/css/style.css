@@ -13,6 +13,23 @@ p, h1, h2, h3 {
     max-width: 65%;
     margin: auto;
 }
+
+header, .total-residence, .results {
+    border: 1px solid black;
+    margin: auto;
+    margin-bottom: 20px;
+    background-color: white;
+    max-width: 65%;
+}
+
+.days-section {
+    margin: auto;
+    margin-bottom: 20px;
+    background-color: white;
+    max-width: 45%;
+   /* display: flex;
+    flex-wrap: wrap; */
+}
 .days-data,
 .final-year,
 .submit,
@@ -24,9 +41,10 @@ p, h3, h2, h1 {
 input {
     box-shadow: 1px 1px 1px 2px gray;
     display: table-cell;
-    margin-left: 550px;
+    margin-left: 50px;
     margin-bottom: 20px;
 }
+
 
 label {
     display: table-cell;
