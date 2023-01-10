@@ -25,3 +25,4 @@ Testing
 
 Acknowledgements and Copyright
 Fonts used were https://fonts.google.com/specimen/Roboto+Condensed 
+Icons from Fontawesome: https://fontawesome.com/

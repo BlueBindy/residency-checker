@@ -6,12 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/style.css">
+    <!--fontawesome script-->
+    <script src="https://kit.fontawesome.com/1e818b8a7e.js" crossorigin="anonymous"></script>
     <title>Document</title>
 </head>
 
 <body>
     <header class="header">
-        <h1>Residency Checker</h1>
+        <h1>Residency Checker <i class="fa-solid fa-passport"></i></h1>
         <p>Are you a British citizen looking to apply for Irish naturalisation through residency? You can check your
             residency period here to see if you qualify yet.</p>
         <p>To be eligible, you need to have accrued sufficient days of residency in the Republic of Ireland within the
@@ -114,18 +116,19 @@
                     <label for="continuous-residency">Final year</label>
                     <span>
                         <input name="continuous-residency" id="continuous-residency" type="number" min="0" max="366">
-                        </input> <span>
-                            <!--User confirmation added to reset button placed next to submit to improve UX-->
-                            <input type="reset" id="reset-button" onclick="return checkReset();"
-                                value="Clear everything I've entered">
-
+                        </input> <span><br>
+                          
                 </div>
+                <div>
+                    <!--User confirmation added to reset button placed next to submit to improve UX-->
+                    <input type="reset" id="reset-button" onclick="return checkReset();"
+                        value="Clear everything I've entered">
+                
+                <span class="submit">
+                    <input type="submit" value="Submit">
+                </span>     
             </div>
-
-
-            <!-- <div class="submit">
-            <input type="submit" value="Submit">
-        </div> -->
+            </div>
         </form>
     </section>
     <section class="results">
