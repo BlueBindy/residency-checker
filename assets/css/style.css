@@ -14,6 +14,10 @@ b {
     color: red;
 }
 
+.logo-green {
+    color:green;
+}
+
 p, h1, h2, h3 {
     max-width: 65%;
     margin: auto;
@@ -25,6 +29,10 @@ header, .total-residence, .results {
     margin-bottom: 20px;
     background-color: white;
     max-width: 65%;
+}
+
+.header {
+    padding-top: 30px;
 }
 
 .days-section {
