@@ -1,29 +1,33 @@
-Intro to Residency-Checker
+### Intro to Residency-Checker
 
-Demo
+## Demo
 Live demo found here:
 Screenshot of pages:
 
-Technologies Used
+## Technologies Used
+HTML, CSS, JavaScript
 
-UX
-User Stories
-Strategy
-Scope
-Structure
-Skeleton (insert wirefames)
-Surface
+## UX
+# User Stories
+# Strategy
+# Scope
+# Structure
+# Skeleton (insert wirefames)
+# Surface
 
-Features
+# Features
 Current Version
 Later Version
 
-Deployment
+# Deployment
 To deploy, select Settings tab from the repository site. Select 'Code and Automation', then 'Pages'. Set branch to 'main' and save. On Code tab, check 'Environments' lists an active github-page and that this lists a deployed site when clicked. 
 
-Testing
+# Testing
+Lighthouse
+Validation
+JShint
 
-Acknowledgements and Copyright
+# Acknowledgements and Copyright
 Fonts used were https://fonts.google.com/specimen/Roboto+Condensed 
 Icons from Fontawesome: https://fontawesome.com/
 icon used as favicon from Icons 8, used under licence (free for link) https://icons8.com/license
