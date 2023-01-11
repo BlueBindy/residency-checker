@@ -26,3 +26,4 @@ Testing
 Acknowledgements and Copyright
 Fonts used were https://fonts.google.com/specimen/Roboto+Condensed 
 Icons from Fontawesome: https://fontawesome.com/
+icon used as favicon from Icons 8, used under licence (free for link) https://icons8.com/license
