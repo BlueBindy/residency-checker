@@ -36,7 +36,7 @@ header, .total-residence, .results {
     background-color: white;
     max-width: 65%;
 }
-
+/*why is this not giving h3 "enter your days of residency" breathing space when it gives it to h3 'great...'*/
 .header {
     padding-top: 30px;
 }
@@ -55,6 +55,10 @@ header, .total-residence, .results {
 .reset,
 p, h3, h2, h1 {
     margin-bottom: 20px;
+}
+
+.heading-space {
+    margin-top: 20px;
 }
 
 .submit {
@@ -79,7 +83,7 @@ div.days-data, div.final-year {
     display: table-row;
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 540px) {
     input {
       margin-bottom: 40px;
     }
@@ -87,4 +91,6 @@ div.days-data, div.final-year {
         margin: 40px;
         margin-left: 45px;
     }
+
+
   }
