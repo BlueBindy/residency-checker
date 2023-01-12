@@ -94,3 +94,30 @@ div.days-data, div.final-year {
 
 
   }
+
+/* Hover tooltip code based on W3 Schools CSS Tooltip tutorial*/
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltip-text {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 10px 5px 10px 5px;
+
+  /* Position the tooltip text */
+  position: absolute;
+  z-index: 1;
+/*POsition the tooltip to the left*/
+  top: -10px;
+    right: 105%;
+}
+
+.tooltip:hover .tooltip-text {
+  visibility: visible;
+}

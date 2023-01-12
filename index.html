@@ -6,8 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--Key words for SEO ranking-->
-    <meta name="description" content="Calculator tool to check residency eligibility for British seeking Irish naturalisation">
-    <meta name="keywords" content="British in Ireland, Irish naturalisation, Irish citizenship, Irish residency requirement">
+    <meta name="description"
+        content="Calculator tool to check residency eligibility for British seeking Irish naturalisation">
+    <meta name="keywords"
+        content="British in Ireland, Irish naturalisation, Irish citizenship, Irish residency requirement">
     <!--stylesheet link to CSS file-->
     <link rel="stylesheet" href="assets/css/style.css">
     <!--fontawesome script-->
@@ -35,106 +37,111 @@
     <section class="total-residence">
         <h3>Enter your days of residency by calendar year here:</h3>
 
-            <div class="days-section">
-                <div class="days-data">
-                    <!--Current year is required input, subsequent years are not; maximum days to include leap year-->
-                    <!-- Code structure for inserting current year suggested by Riley Jones on StackOverflow-->
-                    <label for="current-year"><span id="current-year"></span></label>
-                    <span>
-                        <input name="current-year" class="input-field" type="number" min="0" max="366" required></input>
-                </div>
-                <div class="days-data">
-                    <label for="current-minusone"><span id="current-minusone"></span></label>
-                    <span>
-                        <input name="current-minusone" class="input-field" type="number" min="0" max="366"></input>
-                    </span>
-                </div>
-                <div class="days-data">
-                    <label for="current-minustwo"><span id="current-minustwo"></span></label>
-                    <span>
-                        <input name="current-minustwo" class="input-field" type="number" min="0" max="366"></input>
-                    </span>
-                </div>
-                <div class="days-data">
-                    <label for="current-minusthree"><span id="current-minusthree"></label>
-                    <span>
-                        <input name="current-minusthree" class="input-field" type="number" min="0" max="366">
-                        </input>
-                        <span>
-                </div>
-                <div class="days-data">
-                    <label for="current-minusfour"><span id="current-minusfour"></label>
-                    <input name="current-minusfour" class="input-field" type="number" min="0" max="366">
+        <div class="days-section">
+            <div class="days-data">
+                <!--Current year is required input, subsequent years are not; maximum days to include leap year-->
+                <!-- Code structure for inserting current year suggested by Riley Jones on StackOverflow-->
+                <label for="current-year"><span id="current-year"></span></label>
+                <span>
+                    <input name="current-year" class="input-field" type="number" min="0" max="366" required></input>
+            </div>
+            <div class="days-data">
+                <label for="current-minusone"><span id="current-minusone"></span></label>
+                <span>
+                    <input name="current-minusone" class="input-field" type="number" min="0" max="366"></input>
+                </span>
+            </div>
+            <div class="days-data">
+                <label for="current-minustwo"><span id="current-minustwo"></span></label>
+                <span>
+                    <input name="current-minustwo" class="input-field" type="number" min="0" max="366"></input>
+                </span>
+            </div>
+            <div class="days-data">
+                <label for="current-minusthree"><span id="current-minusthree"></label>
+                <span>
+                    <input name="current-minusthree" class="input-field" type="number" min="0" max="366">
                     </input>
                     <span>
-                </div>
-                <div class="days-data">
-                    <label for="current-minusfive"><span id="current-minusfive"></label>
+            </div>
+            <div class="days-data">
+                <label for="current-minusfour"><span id="current-minusfour"></label>
+                <input name="current-minusfour" class="input-field" type="number" min="0" max="366">
+                </input>
+                <span>
+            </div>
+            <div class="days-data">
+                <label for="current-minusfive"><span id="current-minusfive"></label>
+                <span>
+                    <input name="current-minusfive" class="input-field" type="number" min="0" max="366">
+                    </input>
                     <span>
-                        <input name="current-minusfive" class="input-field" type="number" min="0" max="366">
-                        </input>
-                        <span>
-                </div>
-                <div class="days-data">
-                    <label for="current-minussix"><span id="current-minussix"></label>
+            </div>
+            <div class="days-data">
+                <label for="current-minussix"><span id="current-minussix"></label>
+                <span>
+                    <input name="current-minussix" class="input-field" type="number" min="0" max="366">
+                    </input>
                     <span>
-                        <input name="current-minussix" class="input-field" type="number" min="0" max="366">
-                        </input>
-                        <span>
-                </div>
-                <div class="days-data">
-                    <label for="current-minusseven"><span id="current-minusseven"></label>
+            </div>
+            <div class="days-data">
+                <label for="current-minusseven"><span id="current-minusseven"></label>
+                <span>
+                    <input name="current-minusseven" class="input-field" type="number" min="0" max="366">
+                    </input>
                     <span>
-                        <input name="current-minusseven" class="input-field" type="number" min="0" max="366">
-                        </input>
-                        <span>
+            </div>
+            <div class="days-data">
+                <label for="current-minuseight"><span id="current-minuseight"></label>
+                <span>
+                    <input name="current-minusseight" class="input-field" type="number" min="0" max="366">
+                    </input>
+                </span>
+            </div>
+            <div class="days-data">
+                <div class="tooltip"><i class="fa-solid fa-circle-info"></i>
+                    <span class="tooltip-text">Note days are only eligible if within 3287 days (9 years) of the current date</span>
                 </div>
-                <div class="days-data">
-                    <label for="current-minuseight"><span id="current-minuseight"></label>
-                    <span>
-                        <input name="current-minusseight" class="input-field" type="number" min="0" max="366">
-                        </input>
-                    </span>
-                </div>
-                <div class="days-data">
-                    <label for="current-minusnine"><span id="current-minusnine"></label>
-                    <span>
-                        <input name="current-minusnine" class="input-field" type="number" min="0" max="366">
-                        </input>
-                    </span>
-                </div>
+                <label for="current-minusnine"><span id="current-minusnine"></label>
+            </div>
+            <span>
+                <input name="current-minusnine" class="input-field" type="number" min="0" max="366">
+                </input>
+            </span>
+        </div>
 
 
-                <!--<div class="days-data">
+        <!--<div class="days-data">
                     <label for="total-days"><span id="total"></label>
                     <span>
                         <input name="total-days" id="total-days" type="number" min="0">
                         </input>
                         <span>
                 </div> -->
-            </div>
-            </div>
-            <h3 class="heading-space" >Enter your residential days within the last 365 days below to check for 'continuous residency'.</h3>
+        </div>
+        </div>
+        <h3 class="heading-space">Enter your residential days within the last 365 days below to check for 'continuous
+            residency'.</h3>
 
-            <div class="days-section">
-                <div class="final-year">
-                    <label for="continuous-residency"><span id="last-365"></label>
-                    <span>
-                        <input name="continuous-residency" id="inputfield-11" type="number" min="0" max="366">
-                        </input> <span><br>
-                          
-                </div>
-                <div>
-                    <!--User confirmation added to reset button placed next to submit to improve UX
+        <div class="days-section">
+            <div class="final-year">
+                <label for="continuous-residency"><span id="last-365"></label>
+                <span>
+                    <input name="continuous-residency" id="inputfield-11" type="number" min="0" max="366">
+                    </input> <span><br>
+
+            </div>
+            <div>
+                <!--User confirmation added to reset button placed next to submit to improve UX
                     <input type="reset" id="reset-button" onclick="return checkReset();"
                         value="Clear everything I've entered">-->
                 <!--change type from submit to button because type=submit works with form so need to use button-->
                 <span>
-                    <input class = "submit" type="button" value="Submit" onclick="return submitButton();">
-                </span>     
+                    <input class="submit" type="button" value="Submit" onclick="return submitButton();">
+                </span>
             </div>
-            </div>
-    
+        </div>
+
     </section>
     <section class="results">
         <h3 class="heading-space">Great! Here's a summary of your readiness to apply:</h3>
@@ -143,7 +150,8 @@
         <p>Do you have eligible residency to apply?</p>
 
     </section>
-    <p><a target="_blank" href="https://icons8.com/icon/9867/passport">Passport</a> favicon by <a target="_blank" href="https://icons8.com">Icons8</a></p>
+    <p><a target="_blank" href="https://icons8.com/icon/9867/passport">Passport</a> favicon by <a target="_blank"
+            href="https://icons8.com">Icons8</a></p>
 
     <script src="assets/js/script.js"></script>
 </body>
