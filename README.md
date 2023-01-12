@@ -33,3 +33,4 @@ Icons from Fontawesome: https://fontawesome.com/
 icon used as favicon from Icons 8, used under licence (free for link) https://icons8.com/license
 Favicon insertion technique based on W3 schools tutorial
 File format converted using convertio.co  
+Code structure for inserting current year into HTML suggested by Riley Jones on StackOverflow
