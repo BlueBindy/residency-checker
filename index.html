@@ -35,7 +35,7 @@
     </header>
 
     <section class="total-residence">
-        <h3>Enter your days of residency by calendar year here:</h3>
+        <h3 class="heading-space">Enter your days of residency by calendar year here:</h3>
 
         <div class="days-section">
             <div class="days-data">
@@ -100,47 +100,48 @@
             </div>
             <div class="days-data">
                 <label for="current-minusnine"><span id="current-minusnine"></label>
-            
-            <span>
-                <input name="current-minusnine" class="input-field" id="input-field10" type="number" min="0" max="366">
-                </input>
-                <div class="tooltip"><i class="fa-solid fa-circle-info"></i>
-                    <span class="tooltip-text">Note days are only eligible if within 3287 days (9 years) of the current date</span>
-                </div>
-            </span>
-        </div>
+
+                <span>
+                    <input name="current-minusnine" class="input-field" id="input-field10" type="number" min="0"
+                        max="366">
+                    </input>
+                    <div class="tooltip"><i class="fa-solid fa-circle-info"></i>
+                        <span class="tooltip-text">Note: days are only eligible if within 3,287 days (9 years) of the
+                            current date</span>
+                    </div>
+                </span>
+            </div>
 
 
-        <!--<div class="days-data">
+            <!--<div class="days-data">
                     <label for="total-days"><span id="total"></label>
                     <span>
                         <input name="total-days" id="total-days" type="number" min="0">
                         </input>
+                    </span>
+                </div> 
+        </div>
+        </div>-->
+            <h3 class="heading-space">Enter your residential days within the last 365 days below to check for 'continuous
+                residency'.</h3>
+            
+                <div class="days-section">
+                    <div class="final-year">
+                        <label for="continuous-residency"><span id="last-365"></span></label>
                         <span>
-                </div> -->
-        </div>
-        </div>
-        <h3 class="heading-space">Enter your residential days within the last 365 days below to check for 'continuous
-            residency'.</h3>
-
-        <div class="days-section">
-            <div class="final-year">
-                <label for="continuous-residency"><span id="last-365"></label>
-                <span>
-                    <input name="continuous-residency" id="inputfield-11" type="number" min="0" max="366">
-                    </input> <span><br>
-
-            </div>
-            <div>
-                <!--User confirmation added to reset button placed next to submit to improve UX
+                            <input name="continuous-residency" id="input-field11" type="number" min="0" max="366">
+                            </input> </span>
+                    </div>
+                </div>
+                    <!--User confirmation added to reset button placed next to submit to improve UX
                     <input type="reset" id="reset-button" onclick="return checkReset();"
                         value="Clear everything I've entered">-->
-                <!--change type from submit to button because type=submit works with form so need to use button-->
-                <span>
-                    <input class="submit" type="button" value="Submit" onclick="return submitButton();">
-                </span>
+                    <!--change type from submit to button because type=submit works with form so need to use button-->
+                    <span>
+                        <input class="submit" type="button" value="Submit" onclick="return submitButton();">
+                    </span>
+                </div>
             </div>
-        </div>
 
     </section>
     <section class="results">
