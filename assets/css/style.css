@@ -14,6 +14,12 @@ b {
     color: red;
 }
 
+.submit{
+    margin-left: 100px;
+    background-color: green;
+}
+
+
 .logo-green {
     color:green;
 }
@@ -51,6 +57,11 @@ p, h3, h2, h1 {
     margin-bottom: 20px;
 }
 
+.submit {
+    margin-top: 10px;
+    margin-left: 300px;
+}
+
 input {
     box-shadow: 1px 1px 1px 2px gray;
     display: table-cell;
@@ -67,3 +78,13 @@ label {
 div.days-data, div.final-year {
     display: table-row;
 }
+
+@media screen and (max-width: 375px) {
+    input {
+      margin-bottom: 40px;
+    }
+    .submit {
+        margin: 40px;
+        margin-left: 45px;
+    }
+  }

@@ -27,7 +27,7 @@ function submitButton() {
 let todaysDate = new Date();
 let thisYear = todaysDate.getFullYear();
 let thisDay = todaysDate.getDate();
-let thisMonth = todaysDate.getMonth()
+let thisMonth = todaysDate.getMonth();
 let earliestYear = todaysDate.getFullYear() - 9;
 let yearAgo = todaysDate.getFullYear() - 1;
 
@@ -40,8 +40,8 @@ document.getElementById("current-minusfive").innerHTML = (new Date().getFullYear
 document.getElementById("current-minussix").innerHTML = (new Date().getFullYear() - 6);
 document.getElementById("current-minusseven").innerHTML = (new Date().getFullYear() - 7);
 document.getElementById("current-minuseight").innerHTML = (new Date().getFullYear() - 8);
-document.getElementById("current-minusnine").innerHTML = (`Days since ${thisDay}/${thisMonth + 1}/${earliestYear}`);
-document.getElementById("last-365").innerHTML = (`Days from ${thisDay}/${thisMonth + 1}/${yearAgo} <br> to ${thisDay}/${thisMonth + 1}/${thisYear}`);
+document.getElementById("current-minusnine").innerHTML = (`Days <b>since</b> ${thisDay}/${thisMonth + 1}/${earliestYear}`);
+document.getElementById("last-365").innerHTML = (`Days <b>from</b> ${thisDay}/${thisMonth + 1}/${yearAgo} <br> <b>to</b> ${thisDay}/${thisMonth + 1}/${thisYear}`);
 
 
 function checkReset() {
