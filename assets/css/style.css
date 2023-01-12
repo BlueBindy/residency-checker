@@ -1,7 +1,7 @@
 /*Google fonts link Roboto Condensed Light 300*/
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
 
- /* * { border: 1px solid black; } */
+/* * { border: 1px solid black; } */
 
 body {
     text-align: center;
@@ -14,28 +14,34 @@ b {
     color: red;
 }
 
-.submit{
+.submit {
     margin-left: 100px;
     background-color: green;
 }
 
 
 .logo-green {
-    color:green;
+    color: green;
 }
 
-p, h1, h2, h3 {
+p,
+h1,
+h2,
+h3 {
     max-width: 65%;
     margin: auto;
 }
 
-header, .total-residence, .results {
+header,
+.total-residence,
+.results {
     border: 1px solid black;
     margin: auto;
     margin-bottom: 20px;
     background-color: white;
     max-width: 65%;
 }
+
 /*why is this not giving h3 "enter your days of residency" breathing space when it gives it to h3 'great...'*/
 .header {
     padding-top: 30px;
@@ -46,14 +52,18 @@ header, .total-residence, .results {
     margin-bottom: 20px;
     background-color: white;
     max-width: 45%;
-   /* display: flex;
+    /* display: flex;
     flex-wrap: wrap; */
 }
+
 .days-data,
 .final-year,
 .submit,
 .reset,
-p, h3, h2, h1 {
+p,
+h3,
+h2,
+h1 {
     margin-bottom: 20px;
 }
 
@@ -79,45 +89,51 @@ label {
     text-align: right;
 }
 
-div.days-data, div.final-year {
+div.days-data,
+div.final-year {
     display: table-row;
 }
 
 @media screen and (max-width: 540px) {
     input {
-      margin-bottom: 40px;
+        margin-bottom: 40px;
     }
+
     .submit {
         margin: 40px;
         margin-left: 45px;
     }
 
 
-  }
-
+}
+/*Styling for pop up information on mouse hover over information icon*/
 /* Hover tooltip code based on W3 Schools CSS Tooltip tutorial*/
 .tooltip {
-  position: relative;
-  display: inline-block;
+    position: relative;
+    display: inline-block;
 }
 
 .tooltip .tooltip-text {
-  visibility: hidden;
-  width: 120px;
-  background-color: black;
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  padding: 10px 5px 10px 5px;
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 10px 5px 10px 5px;
 
-  /* Position the tooltip text */
-  position: absolute;
-  z-index: 1;
-/*POsition the tooltip to the left*/
-  top: -10px;
-    right: 105%;
+    /* Position the tooltip text */
+    position: absolute;
+    z-index: 1;
+    /*Position the tooltip to the left*/
+    top: -10px;
+    left: 105%;
 }
 
 .tooltip:hover .tooltip-text {
-  visibility: visible;
+    visibility: visible;
+}
+
+#input-field10 {
+    margin-left: 70px;
 }
