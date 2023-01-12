@@ -41,7 +41,7 @@ document.getElementById("current-minussix").innerHTML = (new Date().getFullYear(
 document.getElementById("current-minusseven").innerHTML = (new Date().getFullYear() - 7);
 document.getElementById("current-minuseight").innerHTML = (new Date().getFullYear() - 8);
 document.getElementById("current-minusnine").innerHTML = (`Days since ${thisDay}/${thisMonth + 1}/${earliestYear}`);
-document.getElementById("last-365").innerHTML = (`From ${thisDay}/${thisMonth + 1}/${yearAgo} to ${thisDay}/${thisMonth + 1}/${thisYear}`);
+document.getElementById("last-365").innerHTML = (`Days from ${thisDay}/${thisMonth + 1}/${yearAgo} <br> to ${thisDay}/${thisMonth + 1}/${thisYear}`);
 
 
 function checkReset() {
