@@ -42,7 +42,13 @@ header,
     max-width: 65%;
 }
 
-/*why is this not giving h3 "enter your days of residency" breathing space when it gives it to h3 'great...'*/
+#input-field10 {
+    margin-left: 90px;
+}
+#input-field11  {
+    margin-left: 95px;
+}
+
 .header {
     padding-top: 30px;
 }
@@ -52,8 +58,6 @@ header,
     margin-bottom: 20px;
     background-color: white;
     max-width: 45%;
-    /* display: flex;
-    flex-wrap: wrap; */
 }
 
 .days-data,
@@ -68,7 +72,7 @@ h1 {
 }
 
 .heading-space {
-    margin-top: 20px;
+    padding-top: 20px;
 }
 
 .submit {
@@ -103,22 +107,24 @@ div.final-year {
         margin: 40px;
         margin-left: 45px;
     }
-    p, h1, h2, h3, header, .total-residence, .results {
-        max-width: 85%;}
-    }
-    
-/* need to shift to text on left*/
-    .tooltip .tooltip-text{
-        top: -10px;
-    right: 105%;
-    }
+    p, h1, h2, h3, header, .total-residence, .results, .days-section {
+        max-width: 75%;}
 
     #input-field10 {
-        margin-right: 20px;
+        margin-right: 40px;
     }
     #input-field11  {
-        margin-right: 25px;
+        margin-right: 45px;
     }
+    header,
+    .total-residence,
+    .results {
+        border: none;
+}
+.heading-space {
+    margin-top: 20px;
+}
+
 }
 /*Styling for pop up information on mouse hover over information icon*/
 /* Hover tooltip code based on W3 Schools CSS Tooltip tutorial*/
@@ -148,9 +154,4 @@ div.final-year {
     visibility: visible;
 }
 
-#input-field10 {
-    margin-left: 70px;
-}
-#input-field11  {
-    margin-left: 75px;
-}
+
