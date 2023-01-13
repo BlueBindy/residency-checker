@@ -103,8 +103,22 @@ div.final-year {
         margin: 40px;
         margin-left: 45px;
     }
+    p, h1, h2, h3, header, .total-residence, .results {
+        max-width: 85%;}
+    }
+    
+/* need to shift to text on left*/
+    .tooltip .tooltip-text{
+        top: -10px;
+    right: 105%;
+    }
 
-
+    #input-field10 {
+        margin-right: 20px;
+    }
+    #input-field11  {
+        margin-right: 25px;
+    }
 }
 /*Styling for pop up information on mouse hover over information icon*/
 /* Hover tooltip code based on W3 Schools CSS Tooltip tutorial*/
@@ -134,6 +148,9 @@ div.final-year {
     visibility: visible;
 }
 
-#input-field10, #input-field11  {
+#input-field10 {
     margin-left: 70px;
+}
+#input-field11  {
+    margin-left: 75px;
 }
