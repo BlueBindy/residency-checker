@@ -9,7 +9,7 @@ function submitButton() {
         /*this function will only print values that evalutate to truthy and therefore won't print NaN*/
         if (findResult) {
             if (findResult <= 366 && findResult >= 0) {
-                sumOfYears = sumOfYears+(findResult);
+                sumOfYears+=findResult;
             } else {
                 validInput = false;
                 break;
