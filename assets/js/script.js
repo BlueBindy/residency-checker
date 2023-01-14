@@ -3,12 +3,13 @@ function submitButton() {
     /*let allDays = document.getElementsByClassName("days-section");*/
     let inputTag = document.getElementsByClassName('input-field');
     let validInput = true;
+    let sumOfYears = 0
     for (let i = 0; i < inputTag.length; i++) {
         let findResult = parseInt(inputTag[i].value);
         /*this function will only print values that evalutate to truthy and therefore won't print NaN*/
         if (findResult) {
             if (findResult <= 366 && findResult >= 0) {
-                console.log(findResult);
+                sumOfYears = sumOfYears+(findResult);
             } else {
                 validInput = false;
                 break;
@@ -20,7 +21,11 @@ function submitButton() {
         alert('Input above 366 or below 0 days will not be counted in your results. \
         Please ensure all days entered between 0 and 366 days.')
     }
+    else {
+        console.log(sumOfYears)
+    }
 }
+ 
 
 
 
