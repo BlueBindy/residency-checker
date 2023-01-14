@@ -1,6 +1,16 @@
 function submitButton() {
     /* days-section does not take .value as it is class name for a div which doesn't have a value, so throws undefined*/
     /*let allDays = document.getElementsByClassName("days-section");*/
+   let contResidencyInput = document.getElementById('input-field11')
+   let firstYearInput = document.getElementById('input-field1')
+   if (contResidencyInput && firstYearInput ) {
+    if (contResidencyInput <= 366 && contResidencyInput >= 0 && firstYearInput <= 366 && firstYearInput >=0) {
+    } else {
+        alert('You must enter at least residency days for the current year and also and continuous residency.')
+    }
+}
+
+
     let inputTag = document.getElementsByClassName('input-field');
     let validInput = true;
     let sumOfYears = 0
