@@ -2,11 +2,26 @@ function submitButton() {
     /* days-section does not take .value as it is class name for a div which doesn't have a value, so throws undefined*/
     /*let allDays = document.getElementsByClassName("days-section");*/
     let inputTag = document.getElementsByClassName('input-field');
+    let validInput = true;
     for (let i = 0; i < inputTag.length; i++) {
         let findResult = parseInt(inputTag[i].value);
-        console.log(findResult);
+        /*this function will only print values that evalutate to truthy and therefore won't print NaN*/
+        if (findResult) {
+            if (findResult <= 366 && findResult >= 0) {
+                console.log(findResult);
+            } else {
+                validInput = false;
+                break;
+            }
+        }
+    }
+    if (!validInput) {
+        /*this alert needs to be outside else block above to prevent it being triggered by every black input box*/
+        alert('Input above 366 or below 0 days will not be counted in your results. \
+        Please ensure all days entered between 0 and 366 days.')
     }
 }
+
 
 
 /* change id to inputfield-n, for loop through that create a string inputfield-n.value*/
