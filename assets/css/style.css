@@ -43,10 +43,10 @@ header,
 }
 
 #input-field10 {
-    margin-left: 90px;
+    margin-left: 70px;
 }
 #input-field11  {
-    margin-left: 95px;
+    margin-left: 75px;
 }
 
 .header {
@@ -72,7 +72,7 @@ h1 {
 }
 
 .heading-space {
-    padding-top: 20px;
+    margin-top: 20px;
 }
 
 .submit {
@@ -111,10 +111,10 @@ div.final-year {
         max-width: 75%;}
 
     #input-field10 {
-        margin-right: 40px;
+        margin-right: 25px;
     }
     #input-field11  {
-        margin-right: 45px;
+        margin-right: 20px;
     }
     header,
     .total-residence,
