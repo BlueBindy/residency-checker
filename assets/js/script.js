@@ -88,4 +88,25 @@ function checkReset() {
     return confirm("Are you sure you want to clear everything you've entered?");
 }
 
+/*if (sumOfYears){
+    if(sumOfYears > 1616) {
+        `You have ${sumOfYears} resident days in the last 9 years. This is enough to meet the total residency requirement.`
+    } else {
+        `You have ${sumOfYears} resident days in the last 9 years. This is not enough to meet the total residency requirement.`
+    }}
 
+    if (sumOfContRes){
+        if(sumOfContRes >=323 && sumOfContRes<=366){
+            `You have ${sumOfContRes} days of continuous residency in the last year. This is enough to satisfy the continuous residency requirement of 323 days to 365 days.`
+        } else {
+            `You have ${sumOfContRes} days of continuous residency in the last year. This is not enough to satisfy the continuous residency requirement of at least 323 days.`
+        }
+    }
+
+    if (sumOfYears && sumOfContRes){
+        if(sumOfContRes >=323 && sumOfContRes<=366 && sumOfYears > 1616){
+            `Congratulations, you have met both of the residency requirements for a naturalisation application!`
+        } else (
+            `Unfortunately, you do not meet both of the essential residency criteria. You'll need to meet both criteria simultaneously before your application is considered eligible.`
+        )
+    } */
