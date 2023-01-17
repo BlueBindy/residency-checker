@@ -5,11 +5,14 @@ function submitButton() {
     let firstYearInput = parseInt(document.getElementById('input-field1').value)
     if (contResidencyInput && firstYearInput) {
         if (contResidencyInput <= 366 && contResidencyInput >= 0 && firstYearInput <= 366 && firstYearInput >= 0) {} else {
-            alert('You must enter your days of residency for at least the current calendar year as well as enter your residential days within the last 365 days to continue.')
+            alert('All entries must be between 0 and 366.')
+            return
         }
     } else {
         alert('You must enter your days of residency for at least the current calendar year as well as enter your residential days within the last 365 days to continue.')
+    return
     }
+
 
 
 
