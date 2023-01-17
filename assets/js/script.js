@@ -1,3 +1,25 @@
+function generateResult(sumOfYears, contResidencyInput) {
+
+    if (sumOfYears > 1616) {
+        `You have ${sumOfYears} resident days in the last 9 years. This is enough to meet the total residency requirement.`
+    } else {
+        `You have ${sumOfYears} resident days in the last 9 years. This is not enough to meet the total residency requirement.`
+    }
+
+    if (contResidencyInput >= 323 && contResidencyInput <= 366) {
+        `You have ${contResidencyInput} days of continuous residency in the last year. This is enough to satisfy the continuous residency requirement of 323 days to 365 days.`
+    } else {
+        `You have ${contResidencyInput} days of continuous residency in the last year. This is not enough to satisfy the continuous residency requirement of at least 323 days.`
+    }
+
+    if (contResidencyInput >= 323 && contResidencyInput <= 366 && sumOfYears > 1616) {
+        `Congratulations, you have met both of the residency requirements for a naturalisation application!`
+    } else {
+        `Unfortunately, you do not meet both of the essential residency criteria. You'll need to meet both criteria simultaneously before your application is considered eligible.`
+    }
+}
+
+
 function submitButton() {
     /* days-section does not take .value as it is class name for a div which doesn't have a value, so throws undefined*/
     /*let allDays = document.getElementsByClassName("days-section");*/
@@ -10,7 +32,7 @@ function submitButton() {
         }
     } else {
         alert('You must enter your days of residency for at least the current calendar year as well as enter your residential days within the last 365 days to continue.')
-    return
+        return
     }
 
 
@@ -38,30 +60,12 @@ function submitButton() {
     } else {
         console.log(sumOfYears)
     }
+    generateResult(sumOfYears, contResidencyInput)
+
+
+
 }
 
-/*let inputTag2 = document.getElementByID('input-field11');
-let validInput2 = true;
-let sumOfContRes = 0
-for (let i = 0; i < inputTag2.length; i++) {
-    let findResult2 = parseInt(inputTag2[i].value);
-    /*this function will only print values that evalutate to truthy and therefore won't print NaN*/
-//    if (findResult2) {
-//         if (findResult2 <= 366 && findResult2 >= 0) {
-//             sumOfContRes += findResult2;
-//         } else {
-//             validInput2 = false;
-//             break;
-//         }
-//     }
-// }
-// if (!validInput2) {
-//     /*this alert needs to be outside else block above to prevent it being triggered by every black input box*/
-//     alert('Input above 366 or below 0 days will not be counted in your results. \
-//         Please ensure all days entered between 0 and 366 days.')
-// } else {
-//     console.log(sumOfContRes)
-// } 
 
 
 
@@ -93,26 +97,3 @@ document.getElementById("last-365").innerHTML = (`Days <b>from</b> ${thisDay}/${
 function checkReset() {
     return confirm("Are you sure you want to clear everything you've entered?");
 }
-
-/*if (sumOfYears){
-    if(sumOfYears > 1616) {
-        `You have ${sumOfYears} resident days in the last 9 years. This is enough to meet the total residency requirement.`
-    } else {
-        `You have ${sumOfYears} resident days in the last 9 years. This is not enough to meet the total residency requirement.`
-    }}
-
-    if (sumOfContRes){
-        if(sumOfContRes >=323 && sumOfContRes<=366){
-            `You have ${sumOfContRes} days of continuous residency in the last year. This is enough to satisfy the continuous residency requirement of 323 days to 365 days.`
-        } else {
-            `You have ${sumOfContRes} days of continuous residency in the last year. This is not enough to satisfy the continuous residency requirement of at least 323 days.`
-        }
-    }
-
-    if (sumOfYears && sumOfContRes){
-        if(sumOfContRes >=323 && sumOfContRes<=366 && sumOfYears > 1616){
-            `Congratulations, you have met both of the residency requirements for a naturalisation application!`
-        } else (
-            `Unfortunately, you do not meet both of the essential residency criteria. You'll need to meet both criteria simultaneously before your application is considered eligible.`
-        )
-    } */
