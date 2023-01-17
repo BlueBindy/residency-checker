@@ -1,14 +1,14 @@
 function submitButton() {
     /* days-section does not take .value as it is class name for a div which doesn't have a value, so throws undefined*/
     /*let allDays = document.getElementsByClassName("days-section");*/
-    let contResidencyInput = document.getElementById('input-field11')
-    let firstYearInput = document.getElementById('input-field1')
+    let contResidencyInput = document.getElementById('input-field11').value
+    let firstYearInput = document.getElementById('input-field1').value
     if (contResidencyInput && firstYearInput) {
-        if (contResidencyInput <= 366 && contResidencyInput >= 0 && firstYearInput <= 366 && contResidencyInput >= 0) {} else {
+        if (contResidencyInput <= 366 && contResidencyInput >= 0 && firstYearInput <= 366 && firstYearInput >= 0) {} else {
             alert('You must enter your days of residency for at least the current calendar year as well as enter your residential days within the last 365 days to continue.')
         }
     }
-}
+
 
 
 let inputTag = document.getElementsByClassName('input-field');
@@ -32,30 +32,30 @@ if (!validInput) {
         Please ensure all days entered between 0 and 366 days.')
 } else {
     console.log(sumOfYears)
-}
+}}
 
-let inputTag2 = document.getElementByID('input-field11');
+/*let inputTag2 = document.getElementByID('input-field11');
 let validInput2 = true;
 let sumOfContRes = 0
 for (let i = 0; i < inputTag2.length; i++) {
     let findResult2 = parseInt(inputTag2[i].value);
     /*this function will only print values that evalutate to truthy and therefore won't print NaN*/
-    if (findResult2) {
-        if (findResult2 <= 366 && findResult2 >= 0) {
-            sumOfContRes += findResult2;
-        } else {
-            validInput2 = false;
-            break;
-        }
-    }
-}
-if (!validInput2) {
-    /*this alert needs to be outside else block above to prevent it being triggered by every black input box*/
-    alert('Input above 366 or below 0 days will not be counted in your results. \
-        Please ensure all days entered between 0 and 366 days.')
-} else {
-    console.log(sumOfContRes)
-}
+//    if (findResult2) {
+//         if (findResult2 <= 366 && findResult2 >= 0) {
+//             sumOfContRes += findResult2;
+//         } else {
+//             validInput2 = false;
+//             break;
+//         }
+//     }
+// }
+// if (!validInput2) {
+//     /*this alert needs to be outside else block above to prevent it being triggered by every black input box*/
+//     alert('Input above 366 or below 0 days will not be counted in your results. \
+//         Please ensure all days entered between 0 and 366 days.')
+// } else {
+//     console.log(sumOfContRes)
+// } 
 
 
 
