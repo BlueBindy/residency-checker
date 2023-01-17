@@ -17,6 +17,7 @@ function generateResult(sumOfYears, contResidencyInput) {
     } else {
         `Unfortunately, you do not meet both of the essential residency criteria. You'll need to meet both criteria simultaneously before your application is considered eligible.`
     }
+
 }
 
 
@@ -55,14 +56,11 @@ function submitButton() {
     }
     if (!validInput) {
         /*this alert needs to be outside else block above to prevent it being triggered by every black input box*/
-        alert('Input above 366 or below 0 days will not be counted in your results. \
-        Please ensure all days entered between 0 and 366 days.')
+        alert('Please only enter a number of days between 0 and 366')
     } else {
         console.log(sumOfYears)
     }
     generateResult(sumOfYears, contResidencyInput)
-
-
 
 }
 
