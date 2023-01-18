@@ -9,12 +9,12 @@ function generateResult(sumOfYears, contResidencyInput) {
     } else {
         `You have ${sumOfYears} resident days in the last 9 years. This is not enough to meet the total residency requirement.`
     }
-    if (contResidencyInput >= 323 && contResidencyInput <= 366) {
+    if (contResidencyInput >= 323) {
         `You have ${contResidencyInput} days of continuous residency in the last year. This is enough to satisfy the continuous residency requirement of 323 days to 365 days.`
     } else {
         `You have ${contResidencyInput} days of continuous residency in the last year. This is not enough to satisfy the continuous residency requirement of at least 323 days.`
     }
-    if (contResidencyInput >= 323 && contResidencyInput <= 366 && sumOfYears > 1616) {
+    if (contResidencyInput >= 323 && sumOfYears > 1616) {
         `Congratulations, you have met both of the residency requirements for a naturalisation application!`
     } else {
         `Unfortunately, you do not meet both of the essential residency criteria. You'll need to meet both criteria simultaneously before your application is considered eligible.`
