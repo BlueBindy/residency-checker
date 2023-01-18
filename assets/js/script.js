@@ -1,4 +1,3 @@
-/* jshint strict: true */
 /**
  * Returns calculated eligibility message for naturalisation based on two necessary requirements of total days and continuous residency.
  * @param {*} sumOfYears Calculates the sum of qualifying residential days in the last nine years, used for checking total residency requirement.
@@ -6,29 +5,29 @@
  */
 function generateResult(sumOfYears, contResidencyInput) {
     /* jshint strict: true */
-    let resultMessage1 = ""
-    let resultMessage2 = ""
-    let resultMessage3 = ""
+    let resultMessage1 = "";
+    let resultMessage2 = "";
+    let resultMessage3 = "";
     if (sumOfYears > 1616) {
-       resultMessage1 = `You have ${sumOfYears} resident days in the last 9 years. This is enough to meet the total residency requirement.`
+       resultMessage1 = `You have ${sumOfYears} resident days in the last 9 years. This is enough to meet the total residency requirement.`;
     } else {
-       resultMessage1 = `You have ${sumOfYears} resident days in the last 9 years. This is not enough to meet the total residency requirement.`
+       resultMessage1 = `You have ${sumOfYears} resident days in the last 9 years. This is not enough to meet the total residency requirement.`;
     }
     if (contResidencyInput >= 323) {
-       resultMessage2= `You have ${contResidencyInput} days of continuous residency in the last year. This is enough to satisfy the continuous residency requirement of 323 days to 365 days.`
+       resultMessage2= `You have ${contResidencyInput} days of continuous residency in the last year. This is enough to satisfy the continuous residency requirement of 323 days to 365 days.`;
     } else {
-        resultMessage2= `You have ${contResidencyInput} days of continuous residency in the last year. This is not enough to satisfy the continuous residency requirement of at least 323 days.`
+        resultMessage2= `You have ${contResidencyInput} days of continuous residency in the last year. This is not enough to satisfy the continuous residency requirement of at least 323 days.`;
     }
     if (contResidencyInput >= 323 && sumOfYears > 1616) {
-       resultMessage3= `Congratulations, you have met both of the residency requirements for a naturalisation application!`
+       resultMessage3= `Congratulations, you have met both of the residency requirements for a naturalisation application!`;
     } else {
-        resultMessage3= `Unfortunately, you do not meet both of the essential residency criteria. You'll need to meet both criteria simultaneously before your application is considered eligible.`
+        resultMessage3= `Unfortunately, you do not meet both of the essential residency criteria. You'll need to meet both criteria simultaneously before your application is considered eligible.`;
     }
-   let showResults = document.getElementsByClassName('results')[0]
+   let showResults = document.getElementsByClassName('results')[0];
    document.getElementById("display-resultpopup1").innerHTML = resultMessage1;
    document.getElementById("display-resultpopup2").innerHTML = resultMessage2;
    document.getElementById("display-resultpopup3").innerHTML = resultMessage3;
-   showResults.style.display = 'block'
+   showResults.style.display = 'block';
    
 }
 /**
@@ -37,20 +36,20 @@ function generateResult(sumOfYears, contResidencyInput) {
  */
 function submitButton() {
     /* days-section does not take .value as it is class name for a div which doesn't have a value, so throws undefined*/
-    let contResidencyInput = parseInt(document.getElementById('input-field11').value)
-    let firstYearInput = parseInt(document.getElementById('input-field1').value)
+    let contResidencyInput = parseInt(document.getElementById('input-field11').value);
+    let firstYearInput = parseInt(document.getElementById('input-field1').value);
     if (contResidencyInput && firstYearInput) {
         if (contResidencyInput <= 366 && contResidencyInput >= 0 && firstYearInput <= 366 && firstYearInput >= 0) {} else {
-            alert('All entries must be between 0 and 366.')
-            return
+            alert('All entries must be between 0 and 366.');
+            return;
         }
     } else {
-        alert('You must enter your days of residency for at least the current calendar year as well as enter your residential days within the last 365 days (continuous residency) to continue.')
-        return
+        alert('You must enter your days of residency for at least the current calendar year as well as enter your residential days within the last 365 days (continuous residency) to continue.');
+        return;
     }
     let inputTag = document.getElementsByClassName('input-field');
     let validInput = true;
-    let sumOfYears = 0
+    let sumOfYears = 0;
     for (let i = 0; i < inputTag.length; i++) {
         let findResult = parseInt(inputTag[i].value);
         /*this function will only print values that evalutate to truthy and therefore won't print NaN*/
@@ -65,15 +64,15 @@ function submitButton() {
     }
     if (!validInput) {
         /*this alert needs to be outside else block above to prevent it being triggered by every black input box*/
-        alert('Please only enter a number of days between 0 and 366')
+        alert('Please only enter a number of days between 0 and 366');
     } else {
-        console.log(sumOfYears)
+        console.log(sumOfYears);
     }
-    generateResult(sumOfYears, contResidencyInput)
+    generateResult(sumOfYears, contResidencyInput);
 }
 
-let showResults = document.getElementsByClassName('results')[0]
-showResults.style.display = 'none'
+let showResults = document.getElementsByClassName('results')[0];
+showResults.style.display = 'none';
 
 /* Code structure for inserting current year suggested by Riley Jones on StackOverflow*/
 /**
