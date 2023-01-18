@@ -154,4 +154,6 @@ div.final-year {
     visibility: visible;
 }
 
-
+.results{
+    display:none
+}

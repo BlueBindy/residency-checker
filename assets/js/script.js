@@ -4,21 +4,30 @@
  * @param {*} contResidencyInput Returns the number of residential days in the last 365, used for checking continuous residency requirement.
  */
 function generateResult(sumOfYears, contResidencyInput) {
+    let resultMessage1 = ""
+    let resultMessage2 = ""
+    let resultMessage3 = ""
     if (sumOfYears > 1616) {
-        `You have ${sumOfYears} resident days in the last 9 years. This is enough to meet the total residency requirement.`
+       resultMessage1 = `You have ${sumOfYears} resident days in the last 9 years. This is enough to meet the total residency requirement.`
     } else {
-        `You have ${sumOfYears} resident days in the last 9 years. This is not enough to meet the total residency requirement.`
+       resultMessage1 = `You have ${sumOfYears} resident days in the last 9 years. This is not enough to meet the total residency requirement.`
     }
     if (contResidencyInput >= 323) {
-        `You have ${contResidencyInput} days of continuous residency in the last year. This is enough to satisfy the continuous residency requirement of 323 days to 365 days.`
+       resultMessage2= `You have ${contResidencyInput} days of continuous residency in the last year. This is enough to satisfy the continuous residency requirement of 323 days to 365 days.`
     } else {
-        `You have ${contResidencyInput} days of continuous residency in the last year. This is not enough to satisfy the continuous residency requirement of at least 323 days.`
+        resultMessage2= `You have ${contResidencyInput} days of continuous residency in the last year. This is not enough to satisfy the continuous residency requirement of at least 323 days.`
     }
     if (contResidencyInput >= 323 && sumOfYears > 1616) {
-        `Congratulations, you have met both of the residency requirements for a naturalisation application!`
+       resultMessage3= `Congratulations, you have met both of the residency requirements for a naturalisation application!`
     } else {
-        `Unfortunately, you do not meet both of the essential residency criteria. You'll need to meet both criteria simultaneously before your application is considered eligible.`
+        resultMessage3= `Unfortunately, you do not meet both of the essential residency criteria. You'll need to meet both criteria simultaneously before your application is considered eligible.`
     }
+   let showResults = document.getElementsByClassName('results')[0]
+   document.getElementById("display-resultpopup1").innerHTML = resultMessage1;
+   document.getElementById("display-resultpopup2").innerHTML = resultMessage2;
+   document.getElementById("display-resultpopup3").innerHTML = resultMessage3;
+   showResults.style.display = 'block'
+   
 }
 /**
  * On submit, issues user alert if user input is invalid or incomplete, otherwise calls calculated eligibility message for user.
@@ -60,6 +69,10 @@ function submitButton() {
     }
     generateResult(sumOfYears, contResidencyInput)
 }
+
+let showResults = document.getElementsByClassName('results')[0]
+showResults.style.display = 'none'
+
 /* Code structure for inserting current year suggested by Riley Jones on StackOverflow*/
 /**
  * Displays correct calendar years, and partial years where appropriate, for eligible period of total residency.
