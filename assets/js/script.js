@@ -1,9 +1,11 @@
+/* jshint strict: true */
 /**
  * Returns calculated eligibility message for naturalisation based on two necessary requirements of total days and continuous residency.
  * @param {*} sumOfYears Calculates the sum of qualifying residential days in the last nine years, used for checking total residency requirement.
  * @param {*} contResidencyInput Returns the number of residential days in the last 365, used for checking continuous residency requirement.
  */
 function generateResult(sumOfYears, contResidencyInput) {
+    /* jshint strict: true */
     let resultMessage1 = ""
     let resultMessage2 = ""
     let resultMessage3 = ""
