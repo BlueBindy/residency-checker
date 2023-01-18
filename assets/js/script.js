@@ -1,29 +1,31 @@
+/**
+ * Returns calculated eligibility message for naturalisation based on two necessary requirements of total days and continuous residency.
+ * @param {*} sumOfYears Calculates the sum of qualifying residential days in the last nine years, used for checking total residency requirement.
+ * @param {*} contResidencyInput Returns the number of residential days in the last 365, used for checking continuous residency requirement.
+ */
 function generateResult(sumOfYears, contResidencyInput) {
-
     if (sumOfYears > 1616) {
         `You have ${sumOfYears} resident days in the last 9 years. This is enough to meet the total residency requirement.`
     } else {
         `You have ${sumOfYears} resident days in the last 9 years. This is not enough to meet the total residency requirement.`
     }
-
     if (contResidencyInput >= 323 && contResidencyInput <= 366) {
         `You have ${contResidencyInput} days of continuous residency in the last year. This is enough to satisfy the continuous residency requirement of 323 days to 365 days.`
     } else {
         `You have ${contResidencyInput} days of continuous residency in the last year. This is not enough to satisfy the continuous residency requirement of at least 323 days.`
     }
-
     if (contResidencyInput >= 323 && contResidencyInput <= 366 && sumOfYears > 1616) {
         `Congratulations, you have met both of the residency requirements for a naturalisation application!`
     } else {
         `Unfortunately, you do not meet both of the essential residency criteria. You'll need to meet both criteria simultaneously before your application is considered eligible.`
     }
-
 }
-
-
+/**
+ * On submit, issues user alert if user input is invalid or incomplete, otherwise calls calculated eligibility message for user.
+ * @returns Ensures alert message notifies only one user error at a time (either invalid input or insufficient user entries) even if both errors are made simultaneously. 
+ */
 function submitButton() {
     /* days-section does not take .value as it is class name for a div which doesn't have a value, so throws undefined*/
-    /*let allDays = document.getElementsByClassName("days-section");*/
     let contResidencyInput = parseInt(document.getElementById('input-field11').value)
     let firstYearInput = parseInt(document.getElementById('input-field1').value)
     if (contResidencyInput && firstYearInput) {
@@ -32,13 +34,9 @@ function submitButton() {
             return
         }
     } else {
-        alert('You must enter your days of residency for at least the current calendar year as well as enter your residential days within the last 365 days to continue.')
+        alert('You must enter your days of residency for at least the current calendar year as well as enter your residential days within the last 365 days (continuous residency) to continue.')
         return
     }
-
-
-
-
     let inputTag = document.getElementsByClassName('input-field');
     let validInput = true;
     let sumOfYears = 0
@@ -61,17 +59,11 @@ function submitButton() {
         console.log(sumOfYears)
     }
     generateResult(sumOfYears, contResidencyInput)
-
 }
-
-
-
-
-
 /* Code structure for inserting current year suggested by Riley Jones on StackOverflow*/
-
-/*code to insert correct year based on existing date into website*/
-/*need to edit to avoid global variable*/
+/**
+ * Displays correct calendar years, and partial years where appropriate, for eligible period of total residency.
+ */
 let todaysDate = new Date();
 let thisYear = todaysDate.getFullYear();
 let thisDay = todaysDate.getDate();
