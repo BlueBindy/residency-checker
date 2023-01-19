@@ -34,12 +34,17 @@ h3 {
 
 header,
 .total-residence,
-.results {
+.results,
+.results-section
+ {
     border: 1px solid black;
     margin: auto;
     margin-bottom: 20px;
     background-color: white;
     max-width: 65%;
+}
+.results {
+    border: none;
 }
 
 #input-field10 {
@@ -107,7 +112,7 @@ div.final-year {
         margin: 40px;
         margin-left: 45px;
     }
-    p, h1, h2, h3, header, .total-residence, .results, .days-section {
+    p, h1, h2, h3, header, .total-residence, .results, .days-section, .results-section {
         max-width: 75%;}
 
     #input-field10 {
@@ -118,11 +123,12 @@ div.final-year {
     }
     header,
     .total-residence,
-    .results {
+    .results, 
+    .results-section {
         border: none;
 }
 .heading-space {
-    margin-top: 20px;
+    margin-top: 40px;
 }
 
 }
