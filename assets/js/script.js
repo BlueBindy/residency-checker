@@ -9,12 +9,12 @@ function generateResult(sumOfYears, contResidencyInput) {
     let resultMessage2 = "";
     let resultMessage3 = "";
     if (sumOfYears > 1616) {
-       resultMessage1 = `You have ${sumOfYears} resident days in the last 9 years. This is enough to meet the total residency requirement.`;
+       resultMessage1 = `You have ${sumOfYears} resident days in the last 9 years. This is enough to meet the total residency requirement including allowable absences.`;
     } else {
-       resultMessage1 = `You have ${sumOfYears} resident days in the last 9 years. This is not enough to meet the total residency requirement.`;
+       resultMessage1 = `You have ${sumOfYears} resident days in the last 9 years. This is not enough to meet the miniumum total residency requirement.`;
     }
     if (contResidencyInput >= 323) {
-       resultMessage2= `You have ${contResidencyInput} days of continuous residency in the last year. This is enough to satisfy the continuous residency requirement of 323 days to 365 days.`;
+       resultMessage2= `You have ${contResidencyInput} days of continuous residency in the last year. This is enough to satisfy the continuous residency requirement of at least 323 days.`;
     } else {
         resultMessage2= `You have ${contResidencyInput} days of continuous residency in the last year. This is not enough to satisfy the continuous residency requirement of at least 323 days.`;
     }
