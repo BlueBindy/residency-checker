@@ -96,8 +96,3 @@ document.getElementById("current-minusseven").innerHTML = (new Date().getFullYea
 document.getElementById("current-minuseight").innerHTML = (new Date().getFullYear() - 8);
 document.getElementById("current-minusnine").innerHTML = (`Days <b>since</b> ${thisDay}/${thisMonth + 1}/${earliestYear}`);
 document.getElementById("last-365").innerHTML = (`Days <b>from</b> ${thisDay}/${thisMonth + 1}/${yearAgo} <br> <b>to</b> ${thisDay}/${thisMonth + 1}/${thisYear}`);
-
-
-function checkReset() {
-    return confirm("Are you sure you want to clear everything you've entered?");
-}
