@@ -38,7 +38,7 @@
         <h2 class="heading-space">Enter your days of residency by calendar year here:</h2>
         <div class="days-section">
             <div class="days-data">
-                <!--Current year is required input, subsequent years are not; maximum days to include leap year, 
+                <!--Section for users to enter total residential days by calendar year. Current year is required input, subsequent years are not; maximum days to include leap year, 
                     though note this validation only restricts input via up and down arrow key in input box, 
                 not when user enters values using keypad.-->
                 <!-- Code structure for inserting current year suggested by Riley Jones on StackOverflow-->
@@ -111,6 +111,7 @@
                 </div>
             </div>
         </div>
+        <!--Section for users to enter 'continuous residency' input-->
         <h2 class="heading-space">Enter your residential days within the last 365 days below to check for 'continuous
             residency'.</h2>
         <div class="days-section">
@@ -126,6 +127,7 @@
             <input class="submit" type="button" value="Submit" onclick="return submitButton();">
         </span>
     </section>
+    <!--Creates receptacle for JS generated response to user once they have submited valid input-->
     <section class="results-section">
         <div class="results">
             <h2 class="heading-space">Your eligibility for Irish naturalisation</h2>
