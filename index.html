@@ -24,7 +24,8 @@
         <h1 class="logo-green"> Irish Residency Checker <i class="fa-solid fa-passport"></i></h1>
         <p>Are you a British citizen looking to apply for Irish naturalisation through residency? You can check your
             residency period here to see if you qualify yet.</p>
-        <p>To be eligible, you need to have accrued the equivalent of five years of residency (1826 days less allowable absences of 42 days per year) in the Republic of Ireland within the
+        <p>To be eligible, you need to have accrued the equivalent of five years of residency (1826 days less allowable
+            absences of 42 days per year) in the Republic of Ireland within the
             last nine years (3,287 days).
             Any hours present during a day in Ireland allow you to count that day, so include departure and arrival
             days of travel.
@@ -44,94 +45,88 @@
                 not when user enters values using keypad.-->
                 <!-- Code structure for inserting current year suggested by Riley Jones on StackOverflow-->
                 <label for="current-year"><span id="current-year"></span></label>
-                <span>
-                    <input name="current-year" class="input-field" type="number" min="0" max="366"
-                        id="input-field1" aria-label="Input box"></input>
+                <input name="current-year" class="input-field" type="number" min="0" max="366" id="input-field1"
+                    aria-label="Input box">
             </div>
             <div class="days-data">
                 <label for="current-minusone"><span id="current-minusone"></span></label>
                 <span>
-                    <input name="current-minusone" class="input-field" type="number" min="0" max="366" aria-label="Input box"></input>
+                    <input name="current-minusone" class="input-field" type="number" min="0" max="366"
+                        aria-label="Input box">
                 </span>
             </div>
             <div class="days-data">
                 <label for="current-minustwo"><span id="current-minustwo"></span></label>
                 <span>
-                    <input name="current-minustwo" class="input-field" type="number" min="0" max="366" aria-label="Input box"></input>
+                    <input name="current-minustwo" class="input-field" type="number" min="0" max="366"
+                        aria-label="Input box">
                 </span>
             </div>
             <div class="days-data">
                 <label for="current-minusthree"><span id="current-minusthree"></label>
                 <span>
-                    <input name="current-minusthree" class="input-field" type="number" min="0" max="366" aria-label="Input box">
-                    </input>
+                    <input name="current-minusthree" class="input-field" type="number" min="0" max="366"
+                        aria-label="Input box">
                     <span>
             </div>
             <div class="days-data">
                 <label for="current-minusfour"><span id="current-minusfour"></label>
-                <input name="current-minusfour" class="input-field" type="number" min="0" max="366" aria-label="Input box">
-                </input>
+                <input name="current-minusfour" class="input-field" type="number" min="0" max="366"
+                    aria-label="Input box">
                 <span>
             </div>
             <div class="days-data">
                 <label for="current-minusfive"><span id="current-minusfive"></label>
                 <span>
-                    <input name="current-minusfive" class="input-field" type="number" min="0" max="366" aria-label="Input box">
-                    </input>
+                    <input name="current-minusfive" class="input-field" type="number" min="0" max="366"
+                        aria-label="Input box">
                     <span>
             </div>
             <div class="days-data">
                 <label for="current-minussix"><span id="current-minussix"></label>
                 <span>
-                    <input name="current-minussix" class="input-field" type="number" min="0" max="366" aria-label="Input box">
-                    </input>
+                    <input name="current-minussix" class="input-field" type="number" min="0" max="366"
+                        aria-label="Input box">
                     <span>
             </div>
             <div class="days-data">
                 <label for="current-minusseven"><span id="current-minusseven"></label>
                 <span>
-                    <input name="current-minusseven" class="input-field" type="number" min="0" max="366" aria-label="Input box">
-                    </input>
+                    <input name="current-minusseven" class="input-field" type="number" min="0" max="366"
+                        aria-label="Input box">
                     <span>
             </div>
             <div class="days-data">
                 <label for="current-minuseight"><span id="current-minuseight"></label>
                 <span>
-                    <input name="current-minusseight" class="input-field" type="number" min="0" max="366" aria-label="Input box">
-                    </input>
+                    <input name="current-minusseight" class="input-field" type="number" min="0" max="366"
+                        aria-label="Input box">
                 </span>
             </div>
             <div class="days-data">
                 <label for="current-minusnine"><span id="current-minusnine"></label>
-
-                <span>
-                    <input name="current-minusnine" class="input-field" id="input-field10" type="number" min="0"
-                        max="366" aria-label="Input box">
-                    </input>
-                    <div class="tooltip"><i class="fa-solid fa-circle-info"></i>
-                        <span class="tooltip-text">Note: days are only eligible if within 3,287 days (9 years) of the
-                            current date</span>
-                    </div>
-                </span>
+                <input name="current-minusnine" class="input-field" id="input-field10" type="number" min="0" max="366"
+                    aria-label="Input box">
+                <div class="tooltip"><i class="fa-solid fa-circle-info"></i>
+                    <span class="tooltip-text">Note: days are only eligible if within 3,287 days (9 years) of the
+                        current date</span>
+                </div>
             </div>
         </div>
-
         <h2 class="heading-space">Enter your residential days within the last 365 days below to check for 'continuous
             residency'.</h2>
-
         <div class="days-section">
             <div class="final-year">
                 <label for="continuous-residency"><span id="last-365"></span></label>
                 <span>
-                    <input name="continuous-residency" id="input-field11" type="number" min="0" max="366" aria-label="Input box">
+                    <input name="continuous-residency" id="input-field11" type="number" min="0" max="366"
+                        aria-label="Input box">
                     </input> </span>
             </div>
         </div>
         <span>
             <input class="submit" type="button" value="Submit" onclick="return submitButton();">
         </span>
-        </div>
-        </div>
     </section>
     <section class="results-section">
         <div class="results">
