@@ -11,12 +11,11 @@ body {
 
 b {
     font-weight: 800;
-    color: red;
 }
 
 .submit {
     margin-left: 100px;
-    background-color: green;
+    background-color: lightgreen;
 }
 
 
@@ -26,8 +25,8 @@ b {
 
 p,
 h1,
-h2,
-h3 {
+h2
+ {
     max-width: 65%;
     margin: auto;
 }
@@ -70,7 +69,6 @@ header,
 .submit,
 .reset,
 p,
-h3,
 h2,
 h1 {
     margin-bottom: 20px;
@@ -112,7 +110,7 @@ div.final-year {
         margin: 40px;
         margin-left: 45px;
     }
-    p, h1, h2, h3, header, .total-residence, .results, .days-section, .results-section {
+    p, h1, h2, header, .total-residence, .results, .days-section, .results-section {
         max-width: 75%;}
 
     #input-field10 {
