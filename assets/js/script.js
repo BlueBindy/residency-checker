@@ -5,6 +5,7 @@
  */
 function generateResult(sumOfYears, contResidencyInput) {
     /* jshint strict: true */
+    "use strict";
     let resultMessage1 = "";
     let resultMessage2 = "";
     let resultMessage3 = "";
