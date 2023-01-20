@@ -17,6 +17,9 @@
     <title>Residency Checker</title>
     <!--favicon link, based on W3 Schools tutorial-->
     <link rel="icon" type="image/x-icon" href="/residency-checker/assets/images/favicon.ico">
+    <!--Fix for: Error with Permissions-Policy header: Origin trial controlled feature not enabled: 'interest-cohort'.
+    Flagged on console. Fix suggested by Saff.gh on StackOverflow-->
+    <meta http-equiv="Permissions-Policy" content="interest-cohort=()">
 </head>
 
 <body>
