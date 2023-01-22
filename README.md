@@ -1,4 +1,4 @@
-### Intro to Residency-Checker
+### Introduction to Residency-Checker
 The Residency Checker website is a single-page HTML, CSS and JavaScript project. The goal for the website is to allow British citizens to check if they meet the residency requirement needed for Irish naturalisation. The requirement includes simultaneous satisfaction of two different residency requirements and this often confuses applicants. The website consists of a tool allowing users to enter their residency pattern content. The user is then presented with a summary of their elibigility. 
 ## Demo
 <a href="https://bluebindy.github.io/residency-checker/">Click here for a live demo</a>
@@ -41,8 +41,15 @@ The single page structure is intended to reduce confusion by making the user jou
 
 # Skeleton (insert wirefames)
 
+Skeleton
+The wireframe desktop version:
 
-NEED TO DO THIS 
+Screenshot of wireframe for home page pre use
+
+The wireframe for page post use: Screenshot of wireframe 
+
+The wireframe for page pre use, mobile version:
+Screenshot of wireframe
 
 # Surface
 The colour scheme is primarily limited to black text on a white page. The limited palette of this design and use of whitespace is intended to maximise simplicity, increase credibility and readability. The title and associated icon (together serving as a logo) is green as a visual reference to Ireland. The sans serif font (Roboto) was selected for its modernity, cleanliness and simplicity, to match the overall design. 
@@ -70,132 +77,191 @@ When using Gitpod, files can be added to staging by using 'git add .' on the bas
 Fiona Thompson created the original repository under in GitHub under username BlueBingy. It is available at: https://github.com/BlueBindy/residency-checker. Clone the repository to run locally by using git clone https://github.com/BlueBindy/residency-checker.git in a terminal. To create a repository that is not forked from the original, use "git remote rm origin" in the terminal.
 
 # Testing
-Lighthouse
-Validation
-JShint
+All tests peformed on 'bluebindy.github.io/residency-checker/' on Chrome, Safari and Firefox browsers on a 13-inch early 2015 Macbook Air using MacOS Monterey v12.6.2. The exception to this is the Lighthouse accesssibility test which was performed on Chrome only.
+### 1. Functionality Testing
+### Test label: Input box toggle limits
+| Test step | Outcome |
+| --- | --- |
+| Test action | Manually check upper and lower limits of entry toggles on input boxes on Chrome, Firefox and Safari. |
+| Expected outcome | Values above 366 and below 0 should not be possible. |
+| Notes | None to add |
+| Test outcome | PASS |
+
+### Test label: Info icon mouseover
+| Test step | Outcome |
+| --- | --- |
+| Test action | Mouse over information icon on Chrome, Firefox and Safari. |
+| Expected outcome | Explanatory text should appear on mouseover and disappear when mouse moves away. |
+| Notes | None to add |
+| Test outcome | PASS |
+
+### Test label: Calculation of days and dates for previous 9 years 
+| Test step | Outcome |
+| --- | --- |
+| Test action | Manually review the calendar years presented on page load in the calendar year section  |
+| Expected outcome | Years presented on page load should show (in order down the page) current year through to 9 years previous. The ninth year should begin with a date 3287 days before current date. |
+| Notes | None to add |
+| Test outcome | PASS |
+
+### Test label: Calculation of dates of last 365 days 
+| Test step | Outcome |
+| --- | --- |
+| Test action | Manually review the range of 365 days presented on page load in the continuous residency section |
+| Expected outcome | The dates presented should be from 365 days before the current date to the current date |
+| Notes | None to add |
+| Test outcome | PASS |
+
+### Test label: Error message for incomplete data 
+| Test step | Outcome |
+| --- | --- |
+| Test action | Enter any pattern of data (valid or invalid) as long as one of the essential input boxes is missing data and click submit. Repeat by entering valid data into both essential input boxes.  |
+| Expected outcome | On submit, an empty but essential input box should produce an alert message requesting both essential input boxes have an entry before continuing. When both essential input boxes have data, after submit is clicked, valid data should produce a results summary.  |
+| Notes | None to add |
+| Test outcome | PASS |
+
+### Test label: Error message for invalid data 
+| Test step | Outcome |
+| --- | --- |
+| Test action | Enter data in both essential text boxes. Enter invalid data (below 0 or above 366) in any input box (essential text box or other) and click submit. Repeat with valid data. |
+| Expected outcome | When invalid data is entered, an alert message should appear requesting only data between 0 and 366 days. Note that intended action is for this alert to be overridden by an alert message requiring both essential input boxes if either essential input box is empty. No alert message should appear if essential input boxes plus any other have valid data entered; instead a summary report should be produced. Empty non-essential input boxes should not create an alert. |
+| Notes | None to add |
+| Test outcome | PASS |
+
+### Test label: Eligibility message
+| Test step | Outcome |
+| --- | --- |
+| Test action | Enter valid data in essential input boxes plus any others and click submit. Refresh the page. |
+| Expected outcome | On submit, a results summary box should appear below the submit button. Eligibility should be calculated and reported on three fronts: total residency days by calendar year, continuous residency in the previous 365 days and thirdly on whether both residential criteria are met simultaneously or not. On refresh, all data and results should be cleared. |
+| Notes | None to add |
+| Test outcome | PASS |
+
+
+### Test label: 404 error page
+| Test step | Outcome |
+| --- | --- |
+| Test action | Peform a browser search for a url such as: https://bluebindy.github.io/residency-checker/xxxx  |
+| Expected outcome | A 404 error page should load alerting the user to the non-existence of the page and offering a link tthat successfully opens the existing page. |
+| Notes | None to add |
+| Test outcome | PASS |
+
+### Test label: icon rendering
+| Test step | Outcome |
+| --- | --- |
+| Test action | Hard refresh broswer cache, navigate to web page, time icon load time, inspect icon. Manually minimise desktop screen size and inspect image. Repeat on Chrome, Firefox and Safari. Repeat using Chrome Developer Tools set for iPhone 5/SE (320 by 568), Surface Duo (540 by 720), iPad Mini (768 by 1024) and Pro Display XDR (6016 by 3384).|
+| Expected outcome | Icon loads within 1 second of refresh and renders without distortion or lack of clarity |
+| Notes | None to add |
+| Test outcome | PASS |
+
+
+### Test label: External link opens in new tab
+| Test step | Outcome |
+| --- | --- |
+| Test action | Click on both credit links for the favicon at the bottom of the page |
+| Expected outcome | Both links should open in a new tab. |
+| Notes | Note that when viewed from GitHub, the text links in README are not expected to open in a new window. Users who wish to open these links in a new tab can instead use: CTRL+click (on Windows and Linux) or CMD+click (on MacOS). |
+| Test outcome | PASS |
+
+### Test label: Fonts
+| Test step | Outcome |
+| --- | --- |
+| Test action | View fonts on page load in Chrome, Safari and Firefox. |
+| Expected outcome | On page load, Roboto font loads and is legible. |
+| Notes | None to add |
+| Test outcome | PASS |
+
+
+### Test label: File organisation
+| Test step | Outcome |
+| --- | --- |
+| Test action | Manually review all files and directories |
+| Expected outcome | Index.html is registered as 'Home' page via listing as entry file for the site on GitHub Pages. All static files to be published on the website are within assets/images/ . All files for README.md are within docs/ and not within assets/ . All css files are within assets/css/ .All files are grouped by type. |
+| Notes | None to add |
+| Test outcome | PASS |
+
+### Test label: Images and links include accessibility labels
+| Test step | Outcome |
+| --- | --- |
+| Test action | Review all images and links for accessibility label or clarify why not present. |
+| Expected outcome | All semantically relevant images include self-explanatory accessibility label.All text links include self-explanatory label as part of text. |
+| Notes | None to add |
+| Test outcome | PASS |
+
+### Test label: Responsivity
+| Test step | Outcome |
+| --- | --- |
+| Test action | Manually minimise desktop screen size and inspect each web page. Repeat on Chrome, Firefox and Safari. Repeat using Chrome Developer Tools set for iPhone 5/SE (320 by 568), Surface Duo (540 by 720), iPad Mini (768 by 1024) and Pro Display XDR (6016 by 3384). |
+| Expected outcome | When the website is viewed on a range of screen sizes, the layout automatically re-assembles in an intuitive, legible and expected layout. Navigation menu, social media links, email form and embedded text links are accessible. |
+| Notes | None to add |
+| Test outcome | PASS |
+
+
+### Test label: Code format standardisation
+| Test step | Outcome |
+| --- | --- |
+| Test action | Manually review all HTML (particularly attributes) and CSS (particularly rules) code, and all file and directory names.|
+| Expected outcome | No uppercase letters used; no spaces found. Multiple words in HTML and CSS declarative code are joined using hyphens, except for repository level names which should use an underscore where necessary. All names are distinctive and intrinsically meaningful. CSS code is filed in an file external to HTML pages and linked to the HTML page in the HEAD element. JavaScript link is at bottom of html body section |
+| Notes | None to add |
+| Test outcome | PASS |
+
+
+### 2. Browser Compatibility testing
+### Test label: Browser compatibility
+| Test step | Outcome |
+| --- | --- |
+| Test action | Request website (using 'bluebindy.github.io/residency-checker/') on Chrome, Firefox and Safari browsers.|
+| Expected outcome | Website appears (including all images) as expected, with all elements, within 2 seconds. |
+| Notes | None to add |
+| Test outcome | PASS |
+
+### 3. Accesibility testing
+### Test label: Browser compatibility
+| Test step | Outcome |
+| --- | --- |
+| Test action | Perform two Lighthouse tests using Chrome Developer Tools (First Mode Navigation and Device Mobile and then second, Mode Navigation and Device Desktop.)|
+| Expected outcome | Best Practices, SEO and Accessibility should return 95+ and Performance should return 90+. |
+| Notes | Producing stable Lighthouse results required all background browsers to be closed and icognito browser mode to be used. |
+| Test outcome | PASS |
+
+
+### 4. Validator Testing
+### CSS validator testing
+| Test step | Outcome |
+| --- | --- |
+| Test action | Test code using Jigsaw validator|
+| Expected outcome | Validation passed with no errors and ideally no warnings (desired not essential.) |
+| Notes | None to add |
+| Test outcome | PASS |
+
+### HTML validator testing
+| Test step | Outcome |
+| --- | --- |
+| Test action | Perform a W3 HTML validation test on website page |
+| Expected outcome | W3 HTML validation passed with zero errors and ideally no warnings (desired not essential) |
+| Notes | None to add |
+| Test outcome | PASS |
+
+### Javascript validator testing
+| Test step | Outcome |
+| --- | --- |
+| Test action | Perform a JSHint validation test |
+| Expected outcome | Validation passed with zero issues and ideally no warnings (desired but not essential.) |
+| Notes | None to add |
+| Test outcome | PASS |
+
 
 # Acknowledgements and Copyright
 Fonts used were https://fonts.google.com/specimen/Roboto+Condensed 
-Icons from Fontawesome: https://fontawesome.com/
-icon used as favicon from Icons 8, used under licence (free for link) https://icons8.com/license
+Icon in logo from Fontawesome: https://fontawesome.com/
+Icon used as favicon from Icons 8, used under licence (free for link) https://icons8.com/license
 Favicon insertion technique based on W3 schools tutorial
 File format converted using convertio.co  
 Code structure for inserting current year into HTML suggested by Riley Jones on StackOverflow
-
-Copyright and acknowledgements
-Resources
-
-Fonts are from Google Fonts. Logo icon is from FontAwesome and favicon is from Icons8.
+README structure based on Code Institute's example. The structure and approach to Testing reflects guidance from Brian Macharia.
 
 Mentoring from Brian Macharia. All errors and ommissions the responsibility of Fiona Thompson.
 
-README structure based on Code Institute's example. The structure and approach to Testing reflects guidance from Brian Macharia.
-
-Content
 All content is written by Fiona Thompson.
 
 ENDS
 
-+++++++++++++++++++++++++++++++++++++
-
-Get Settled readme:
-
-
-
-Skeleton
-The wireframe for the home page, desktop version:
-
-Screenshot of wireframe for home page
-
-The wireframe for the How To page, desktop version: Screenshot of wireframe for home page
-
-The wireframe for the FAQ page, desktop version: Screenshot of wireframe for home page
-
-The wireframe for the How To page, mobile version:
-Screenshot of wireframe for home page
-
-Testing
-1. Functionality Testing
-All tests peformed on 'bluebindy.github.io/get_settled/' on Chrome, Safari and Firefox browsers on a 13-inch early 2015 Macbook Air using MacOS Monterey v12.5.1. The exception to this is the Lighthouse accesssibility test which was performed on Chrome only.
-
-Test label: Social media links
-Test action: Hover over link, click link, view opened page, return to website via browser tab, click elsewhere on website.Repeat on Chrome, Firefox and Safari.
-Expected outcome: On mouse over, hover hand, green highlight and black bottom border appears. Click opens correct page in new tab. Expected page for social links is home page of relevant social media platform as there are no social media accounts created for this project. On return to website, icon remains briefly green highlighted, with black bottom border before changing to a paler green with bottom border. Highlight and bottom border disappear when screen refreshed or somewhere else on page clicked.
-Test outcome: PASS
-
-Test label: Embedded text links
-Test action: Hover over link, click link, view opened page, return to website via browser tab, click elsewhere on website. Repeat on Chrome, Firefox and Safari.
-Expected outcome: Hover hand, green higlight and black bottom border appears on mouse over; click opens correct page in new tab. On return to website, icon remains briefly green highlighted, with black bottom border before changing to a paler green with bottom border. Highlight and bottom border disappear when screen refreshed or somewhere else on page clicked.
-Test outcome: PASS after code modifications were incorporated for Safari and Firefox and with a README exception when viewed from GitHub.
-
-Initially Firefox and Safari browser defaults were overriding CSS color choices on unvisited and visited links. A class was added to the text links to increase their specificity to override the browser defaults in turn. When the class was targetted with CSS color preferences the color presentation in Safari and Firefox aligned with the Chrome experience and the desired experience.
-When viewed from GitHub, the text links in README do not open in a new window. A number of sources (StackOverflow, LaraCast forum, Code Institute Tutor session) suggest that GitHub does not allow this feature based on HTML code. Users who wish to open these links in a new tab can instead use: CTRL+click (on Windows and Linux) or CMD+click (on MacOS).
-Test label: Email form
-Test action: Enter first name, last name and email address into appropriate fields and click 'Send' ('appropriate text'). Click send without entering first name, last name and email address ('missing data'). Click send after entering email address without '@' ('incorrect data'). Repeat on Chrome, Firefox and Safari.
-Expected outcome: When appropriate text is entered, the Code Insitute's formdump page opens in a new tab, confirming details entered. On return to website, entered data is cleared when website is refreshed. When missing or incorrect data is entered (specifically, something other than a functioning email is entered in the Email field, or nothing is entered in First Name or Last Name) a user error warning appears and data is not sent.
-Test outcome: PASS
-
-Test label: Navigation menu
-Test action: Hover over menu link, click link, view selected website page page, return to a different website via menu link click. Repeat for Safari, Chrome and Firefox.
-Expected outcome: On mouse over, a hover hand, green highlight and black bottom border appears. On click, the user is taken to the correct website page. Clicking on Get Settled logo produces hover hand but no highlight or underline and takes user to Home page. No highlight or bottom borner remains when user is on selected web page. Clicking navigation links should not open a new tab but keep user on the same tab.
-Test outcome: PASS
-
-Test label: Images
-Test action: Hard refresh broswer cache, navigate to web page with image, time image load time, inspect image. Manually minimise desktop screen size and inspect image. Repeat on Chrome, Firefox and Safari. Repeat using Chrome Developer Tools set for iPhone 5/SE (320 by 568), Surface Duo (540 by 720), iPad Mini (768 by 1024) and Pro Display XDR (6016 by 3384).
-Expected outcome: On page load, all images (both decorative and semantic) appear and load with less than 1 second delay and are not stretched or distorted.
-Test outcome: PASS after file compression and conversion to WebP.
-
-Test label: Fonts
-Test action: Inspect fonts after hard cache refresh on Chrome, Safari and Firefox browsers. Repeat while manually adjusting window size from minimum to maximum.
-Expected outcome: On page load, Oswald font loads and is legible.
-Test outcome: PASS after modifications.
-
-Initially Oswald did not load on Safari browser, but the default sans serif was produced instead. CSS code 'font-display: swap' was added to the body element to trigger loading of Oswald (based on a developer.mozilla.org suggestion). Oswald successfully loaded on Safari after this code addition. However, this CSS code failed the W3 Jigsaw test ('Property font-display doesn't exist: swap') and on inspection, as it was apparent it is alreaddy embedded in the Google Fonts url import, it was removed. The failure to load Oswald font error could not be reproduced on later testing after the code was removed. Instead, Oswald loaded on Safari on all subsequent tests.
-Test label: Responsivity
-Test action: Manually minimise desktop screen size and inspect each web page. Repeat on Chrome, Firefox and Safari. Repeat using Chrome Developer Tools set for iPhone 5/SE (320 by 568), Surface Duo (540 by 720), iPad Mini (768 by 1024) and Pro Display XDR (6016 by 3384).
-Expected outcome: When the website is viewed on a range of screen sizes, the layout automatically re-assembles in an intuitive, legible and expected layout. Navigation menu, social media links, email form and embedded text links are accessible.
-Test outcome: PASS after code modification for H3 text overlay on FAQ image.
-
-Initially this text did not stay in an appropriate position; on very small screens it either migrated up or disappeared. Positioning was modified from cardinal to percentage units as suggested by Brian Macharia. This modification resulted in the text appearing as expected on a range of screens.
-Test label: Code format compliance
-Test action: Review all HTML (particularly attributes) and CSS (particularly rules) code, and all file and directory names.
-Expected outcome: No uppercase letters used; no spaces found. Multiple words in HTML and CSS declarative code are joined using hyphens, except for repository level names which should use an underscore where necessary. All names are distinctive and intrinsically meaningful. CSS code is filed in an file external to HTML pages and linked to the HTML page in the HEAD element.
-Test outcome: PASS after discrepancies were modified (particularly variations in use of hyphen and underscore in attribute names).
-
-Test label: Images and links include accessibility labels.
-Test action: Review all images and links for accessibility label or clarify why not present.
-Expected outcome: All semantically relevant images include self-explanatory accessibility label.All text links include self-explanatory label as part of text.
-Test outcome: PASS. Images used for decorative purposes only have no accessibility labels, but this is acceptable.
-
-Test label: File organisation
-Test action: Review all files and directories
-Expected outcome: Index.html is registered as 'Home' page via listing as entry file for the site on GitHub Pages. All static files to be published on the website are within assets/images.css/ . All files for README.md are within documentation-images/ . All css files are within assets/css/ .All files are grouped by type.
-Test outcome: PASS.
-
-2. Browser Compatability
-Test label: Browser compatibility
-Test action: Request website (using 'bluebindy.github.io/get_settled/') on Chrome, Firefox and Safari browsers.
-Expected outcome: Website appears (including all images) as expected, with all elements, within 2 seconds.
-Test outcome: PASS after modifications listed in manual testing section.
-
-5. Accessibility
-Test label: Accessibility testing
-Test action: Perform two Lighthouse tests using Chrome Developer Tools (First Mode Navigation and Device Mobile and then second, Mode Navigation and Device Desktop.) across all pages (to check for consistency of results.)
-Expected outcome: Best Practices, SEO and Accessibility should return 95+ and Performance should return 90+.
-Test outcome: PASS after initial feedback was incorporated.
-
-Mobile results were 100 for Accessibility, Best Practices and SEO; Performance was 97. Desktop results were 100 for Accessibility, Best Practices and SEO; Performance was 98.
-Feedback included compressing images (for the web page and also README images) and converting to WebP for Performance. Additional Performance feedback included using preload and dns-prefetch for the Google Fonts in the HTML head to speed up page load but this produced varying results and was removed. Feedback also included providing additional padding for social media icons for Accessibility.
-Producing stable Lighthouse results required all background browsers to be closed and icognito browser mode to be used.
-6. Validator Testing
-Test label: W3 HTML validation
-Test action: Perform a W3 HTML validation test on all pages (Home, How To, FAQ and Page Not Found)
-Expected outcome: W3 HTML validation passed with zero errors and ideally no warnings (desired not essential).
-Test outcome: PASS (0 errors, 0 warnings) after initial feedback was incorporated.
-
-Initial W3 HTML testing recommended additional H2/3/4 headings and fewer H1 headings. Some stray and unclosed tags were also highlighted. Feedback also suggested some sections were changed to divs unless headers were used. Headers for these sections (eg Line 18, index.html) were not semantically appropriate and so divs were used in all noted instances. After recommendations were implemented, W3 HTML testing indicated no errors or warnings.
-Test label: W3 CSS validation (Jigsaw)
-Test action: Perform a W3 CSS validation test
-Expected outcome: W3 CSS validation passed with no issues outstanding
-Test outcome: PASS after initial feedback was incorporated. Initial W3 CSS testing indicated some duplicate tags and an error in a function name. Once removed no further issues were reported.
-
+-------------------------
