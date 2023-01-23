@@ -1,284 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!--Key words for SEO ranking-->
-    <meta
-      name="description"
-      content="Calculator tool to check residency eligibility for British seeking Irish naturalisation"
-    />
-    <meta
-      name="keywords"
-      content="British in Ireland, Irish naturalisation, 
-      Irish citizenship, Irish residency requirement"
-    />
+    <meta name="description"
+        content="Calculator tool to check residency eligibility for British seeking Irish naturalisation" />
+    <meta name="keywords" content="British in Ireland, Irish naturalisation, 
+      Irish citizenship, Irish residency requirement" />
     <!--stylesheet link to CSS file-->
     <link rel="stylesheet" href="assets/css/style.css" />
     <!--fontawesome script-->
-    <script
-      src="https://kit.fontawesome.com/1e818b8a7e.js"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://kit.fontawesome.com/1e818b8a7e.js" crossorigin="anonymous"></script>
     <title>Residency Checker</title>
     <!--favicon link, based on W3 Schools tutorial. file path 
         includes /residency-checker/ to ensure favicon displays 
         in deployed version-->
-    <link
-      rel="icon"
-      type="image/x-icon"
-      href="/residency-checker/assets/images/favicon.ico"
-    />
+    <link rel="icon" type="image/x-icon" href="/residency-checker/assets/images/favicon.ico" />
     <!--Fix for: Error with Permissions-Policy header: Origin trial 
         controlled feature not enabled: 'interest-cohort'.
     Flagged on console. Fix suggested by Saff.gh on StackOverflow-->
     <meta http-equiv="Permissions-Policy" content="interest-cohort=()" />
     <!--user alert modification from SweetAlert-->
     <script src="sweetalert2.all.min.js"></script>
-  </head>
+</head>
 
-  <body>
+<body>
     <header class="header">
-      <h1 class="logo-green">
-        Irish Residency Checker <i class="fa-solid fa-passport"></i>
-      </h1>
-      <p>
-        Are you a British citizen looking to apply for Irish naturalisation
-        through residency? You can check your residency period here to see if
-        you qualify yet.
-      </p>
-      <p>
-        To be eligible, you need to have accrued the equivalent of five years of
-        residency (1826 days less allowable absences of 42 days per year) in the
-        Republic of Ireland within the last nine years (3,287 days). Any hours
-        present during a day in Ireland allow you to count that day, so include
-        departure and arrival days of travel. Full days in Northern Ireland, or
-        elsewhere in the UK, or in any other country cannot be included. Note
-        that leap years (eg 2016, 2020, 2024, 2028) have 366 days.
-      </p>
-      <p>
-        <b>In addition </b> to total residential days, you will
-        <b>also </b> need to meet the final year 'continuous residency'
-        requirement (323 days plus). You can check that below as well. Scroll
-        down for a summary of your eligibility.
-      </p>
+        <h1 class="logo-green">
+            Irish Residency Checker <i class="fa-solid fa-passport"></i>
+        </h1>
+        <p>
+            Are you a British citizen looking to apply for Irish naturalisation
+            through residency? You can check your residency period here to see if
+            you qualify yet.
+        </p>
+        <p>
+            To be eligible, you need to have accrued the equivalent of five years of
+            residency (1826 days less allowable absences of 42 days per year) in the
+            Republic of Ireland within the last nine years (3,287 days). Any hours
+            present during a day in Ireland allow you to count that day, so include
+            departure and arrival days of travel. Full days in Northern Ireland, or
+            elsewhere in the UK, or in any other country cannot be included. Note
+            that leap years (eg 2016, 2020, 2024, 2028) have 366 days.
+        </p>
+        <p>
+            <b>In addition </b> to total residential days, you will
+            <b>also </b> need to meet the final year 'continuous residency'
+            requirement (323 days plus). You can check that below as well. Scroll
+            down for a summary of your eligibility.
+        </p>
     </header>
 
     <section class="total-residence">
-      <h2 class="heading-space">
-        First step: enter your days of residency by calendar year here (most
-        recent year is minimum requirement):
-      </h2>
-      <div class="days-section">
-        <div class="days-data">
-          <!--Section for users to enter total residential days by 
+        <h2 class="heading-space">
+            First step: enter your days of residency by calendar year here (most
+            recent year is minimum requirement):
+        </h2>
+        <div class="days-section">
+            <div class="days-data">
+                <!--Section for users to enter total residential days by 
             calendar year. Current year is required input, subsequent 
-            years are not; maximum days to include leap year, though 
+            years are not; maximum days to include allowance for leap year, though 
             note this validation only restricts input via up and down 
-            arrow key in input box, not when user enters values using keypad.-->
-          <!-- Code structure for inserting current year suggested 
+            arrow key in input box, not when user enters values using keypad. This
+            restriction is overridden by JS validation but remains in HTML in case JS fails-->
+                <!-- Code structure for inserting current year suggested 
             by Riley Jones on StackOverflow-->
-          <!--for attribute removed from label as input is a hidden form control 
-            and it fails W3 Validator when included-->
-          <label><span id="current-year"></span></label>
-          <input
-            name="current-year"
-            class="input-field"
-            type="number"
-            min="0"
-            max="366"
-            id="input-field1"
-            aria-label="Input box"
-          />
+                <label for="input-field1"><span id="current-year"></span></label>
+                <input name="current-year" class="input-field" type="number" min="0" max="366" id="input-field1"
+                    aria-label="Input box" />
+            </div>
+            <div class="days-data">
+                <label for="input-field2"><span id="current-minusone"></span></label>
+                <span>
+                    <input name="current-minusone" class="input-field" type="number" min="0" max="366" id="input-field2"
+                        aria-label="Input box" />
+                </span>
+            </div>
+            <div class="days-data">
+                <label for="input-field3"><span id="current-minustwo"></span></label>
+                <span>
+                    <input name="current-minustwo" class="input-field" type="number" min="0" max="366" id="input-field3"
+                        aria-label="Input box" />
+                </span>
+            </div>
+            <div class="days-data">
+                <label for="input-field4"><span id="current-minusthree"></span></label>
+                <span>
+                    <input name="current-minusthree" class="input-field" type="number" min="0" max="366" id="input-field4"
+                        aria-label="Input box" />
+                </span>
+            </div>
+            <div class="days-data">
+                <label for="input-field5"><span id="current-minusfour"></span></label>
+                <input name="current-minusfour" class="input-field" type="number" min="0" max="366" id="input-field5"
+                    aria-label="Input box" />
+            </div>
+            <div class="days-data">
+                <label for="input-field6"><span id="current-minusfive"></span></label>
+                <span>
+                    <input name="current-minusfive" class="input-field" type="number" min="0" max="366" id="input-field6"
+                        aria-label="Input box" />
+                </span>
+            </div>
+            <div class="days-data">
+                <label for="input-field7"><span id="current-minussix"></span></label>
+                <span>
+                    <input name="current-minussix" class="input-field" type="number" min="0" max="366" id="input-field7"
+                        aria-label="Input box" />
+                </span>
+            </div>
+            <div class="days-data">
+                <label for="input-field8"><span id="current-minusseven"></span></label>
+                <span>
+                    <input name="current-minusseven" class="input-field" type="number" min="0" max="366" id="input-field8"
+                        aria-label="Input box" />
+                </span>
+            </div>
+            <div class="days-data">
+                <label for="input-field9"><span id="current-minuseight"></span></label>
+                <span>
+                    <input name="current-minusseight" class="input-field" type="number" min="0" max="366" id="input-field9"
+                        aria-label="Input box" />
+                </span>
+            </div>
+            <div class="days-data">
+                <label for="input-field10"><span id="current-minusnine"></span></label>
+                <input name="current-minusnine" class="input-field" id="input-field10" type="number" min="0" max="366"
+                    aria-label="Input box" />
+                <div class="tooltip">
+                    <i class="fa-solid fa-circle-info"></i>
+                    <span class="tooltip-text">Note: days are only eligible if within 3,287 days (9 years) of
+                        the current date</span>
+                </div>
+            </div>
         </div>
-        <div class="days-data">
-          <label for="current-minusone"
-            ><span id="current-minusone"></span
-          ></label>
-          <span>
-            <input
-              name="current-minusone"
-              class="input-field"
-              type="number"
-              min="0"
-              max="366"
-              aria-label="Input box"
-            />
-          </span>
+        <!--Section for users to enter 'continuous residency' input-->
+        <h2 class="heading-space">
+            Second step: enter your residential days within the last 365 days below
+            to check for 'continuous residency' (required to continue).
+        </h2>
+        <div class="days-section">
+            <div class="final-year">
+                <label for="input-field11"><span id="last-365"></span></label>
+                <span>
+                    <input name="continuous-residency" id="input-field11" type="number" min="0" max="366"
+                        aria-label="Input box" />
+                </span>
+            </div>
         </div>
-        <div class="days-data">
-          <label for="current-minustwo"
-            ><span id="current-minustwo"></span
-          ></label>
-          <span>
-            <input
-              name="current-minustwo"
-              class="input-field"
-              type="number"
-              min="0"
-              max="366"
-              aria-label="Input box"
-            />
-          </span>
-        </div>
-        <div class="days-data">
-          <label for="current-minusthree"
-            ><span id="current-minusthree"></span
-          ></label>
-          <span>
-            <input
-              name="current-minusthree"
-              class="input-field"
-              type="number"
-              min="0"
-              max="366"
-              aria-label="Input box"
-            />
-          </span>
-        </div>
-        <div class="days-data">
-          <label for="current-minusfour"
-            ><span id="current-minusfour"></span
-          ></label>
-          <input
-            name="current-minusfour"
-            class="input-field"
-            type="number"
-            min="0"
-            max="366"
-            aria-label="Input box"
-          />
-        </div>
-        <div class="days-data">
-          <label for="current-minusfive"
-            ><span id="current-minusfive"></span
-          ></label>
-          <span>
-            <input
-              name="current-minusfive"
-              class="input-field"
-              type="number"
-              min="0"
-              max="366"
-              aria-label="Input box"
-            />
-          </span>
-        </div>
-        <div class="days-data">
-          <label for="current-minussix"
-            ><span id="current-minussix"></span
-          ></label>
-          <span>
-            <input
-              name="current-minussix"
-              class="input-field"
-              type="number"
-              min="0"
-              max="366"
-              aria-label="Input box"
-            />
-          </span>
-        </div>
-        <div class="days-data">
-          <label for="current-minusseven"
-            ><span id="current-minusseven"></span
-          ></label>
-          <span>
-            <input
-              name="current-minusseven"
-              class="input-field"
-              type="number"
-              min="0"
-              max="366"
-              aria-label="Input box"
-            />
-          </span>
-        </div>
-        <div class="days-data">
-          <label for="current-minuseight"
-            ><span id="current-minuseight"></span
-          ></label>
-          <span>
-            <input
-              name="current-minusseight"
-              class="input-field"
-              type="number"
-              min="0"
-              max="366"
-              aria-label="Input box"
-            />
-          </span>
-        </div>
-        <div class="days-data">
-          <label for="current-minusnine"
-            ><span id="current-minusnine"></span
-          ></label>
-          <input
-            name="current-minusnine"
-            class="input-field"
-            id="input-field10"
-            type="number"
-            min="0"
-            max="366"
-            aria-label="Input box"
-          />
-          <div class="tooltip">
-            <i class="fa-solid fa-circle-info"></i>
-            <span class="tooltip-text"
-              >Note: days are only eligible if within 3,287 days (9 years) of
-              the current date</span
-            >
-          </div>
-        </div>
-      </div>
-      <!--Section for users to enter 'continuous residency' input-->
-      <h2 class="heading-space">
-        Second step: enter your residential days within the last 365 days below
-        to check for 'continuous residency' (required to continue).
-      </h2>
-      <div class="days-section">
-        <div class="final-year">
-          <label for="continuous-residency"><span id="last-365"></span></label>
-          <span>
-            <input
-              name="continuous-residency"
-              id="input-field11"
-              type="number"
-              min="0"
-              max="366"
-              aria-label="Input box"
-            />
-          </span>
-        </div>
-      </div>
-      <span>
-        <input
-          class="submit"
-          type="button"
-          value="Submit"
-          onclick="return submitButton();"
-        />
-      </span>
+        <span>
+            <input class="submit" type="button" value="Submit" onclick="return submitButton();" />
+        </span>
     </section>
     <!--Creates receptacle for JS generated response to user 
         once they have submited valid input-->
     <section class="results-section">
-      <div class="results">
-        <h2 class="heading-space">Your eligibility for Irish naturalisation</h2>
-        <div id="display-resultpopup1" class="heading-space"></div>
-        <div id="display-resultpopup2" class="heading-space"></div>
-        <div id="display-resultpopup3" class="heading-space"></div>
-        <br />
-      </div>
+        <div class="results">
+            <h2 class="heading-space">Your eligibility for Irish naturalisation</h2>
+            <div id="display-resultpopup1" class="heading-space"></div>
+            <div id="display-resultpopup2" class="heading-space"></div>
+            <div id="display-resultpopup3" class="heading-space"></div>
+            <br />
+        </div>
     </section>
     <p>
-      <a target="_blank" href="https://icons8.com/icon/9867/passport"
-        >Passport</a
-      >
-      favicon by <a target="_blank" href="https://icons8.com">Icons8</a>
+        <a target="_blank" href="https://icons8.com/icon/9867/passport">Passport</a>
+        favicon by <a target="_blank" href="https://icons8.com">Icons8</a>
     </p>
     <!--script tag at bottom of body section to ensure HTML loads first-->
     <script src="assets/js/script.js"></script>
-  </body>
+</body>
+
 </html>

@@ -1,68 +1,70 @@
 /*Google fonts link Roboto Condensed Light 300*/
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap");
+
 /*basic styling for elements on page*/
 body {
-  text-align: center;
-  font-family: "Roboto Condensed", sans-serif;
-  background-color: whitesmoke;
-  max-width: 1800px;
-  margin-left: auto;
-  margin-right: auto;
+    text-align: center;
+    font-family: "Roboto Condensed", sans-serif;
+    background-color: whitesmoke;
+    max-width: 1800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 b {
-  font-weight: 800;
+    font-weight: 800;
 }
 
 .submit {
-  margin-left: 100px;
-  background-color: lightgreen;
+    margin-left: 100px;
+    background-color: lightgreen;
 }
 
 .logo-green {
-  color: green;
+    color: green;
 }
 
 p,
 h1,
 h2 {
-  max-width: 65%;
-  margin: auto;
+    max-width: 65%;
+    margin: auto;
 }
 
 header,
 .total-residence,
 .results,
 .results-section {
-  border: 1px solid black;
-  margin: auto;
-  margin-bottom: 20px;
-  background-color: white;
-  max-width: 65%;
+    border: 1px solid black;
+    margin: auto;
+    margin-bottom: 20px;
+    background-color: white;
+    max-width: 65%;
 }
 
 .results,
 .results-section {
-  border: none;
+    border: none;
 }
 
 #input-field10 {
-  margin-left: 70px;
+    margin-left: 70px;
 }
 
 #input-field11 {
-  margin-left: 75px;
+    margin-left: 75px;
 }
+
 /*Styling to give some breathing space to elements*/
 .header {
-  padding-top: 30px;
+    padding-top: 30px;
 }
 
 .days-section {
-  margin: auto;
-  margin-bottom: 20px;
-  background-color: white;
-  max-width: 45%;
+    margin: auto;
+    margin-bottom: 20px;
+    background-color: white;
+    max-width: 45%;
 }
 
 .days-data,
@@ -72,102 +74,105 @@ header,
 p,
 h2,
 h1 {
-  margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 
 .heading-space {
-  margin-top: 20px;
+    margin-top: 20px;
 }
 
 .submit {
-  margin-top: 10px;
-  margin-left: 300px;
+    margin-top: 10px;
+    margin-left: 300px;
 }
 
 input {
-  box-shadow: 1px 1px 1px 2px gray;
-  display: table-cell;
-  margin-left: 50px;
-  margin-bottom: 20px;
+    box-shadow: 1px 1px 1px 2px gray;
+    display: table-cell;
+    margin-left: 50px;
+    margin-bottom: 20px;
 }
+
 /*alignment for labels and input boxes*/
 label {
-  display: table-cell;
-  text-align: left;
+    display: table-cell;
+    text-align: left;
 }
 
 div.days-data,
 div.final-year {
-  display: table-row;
+    display: table-row;
 }
+
 /*styling for responsivity*/
 @media screen and (max-width: 540px) {
-  input {
-    margin-bottom: 40px;
-  }
+    input {
+        margin-bottom: 40px;
+    }
 
-  .submit {
-    margin: 40px;
-    margin-left: 45px;
-  }
+    .submit {
+        margin: 40px;
+        margin-left: 45px;
+    }
 
-  p,
-  h1,
-  h2,
-  header,
-  .total-residence,
-  .results,
-  .days-section,
-  .results-section {
-    max-width: 75%;
-  }
+    p,
+    h1,
+    h2,
+    header,
+    .total-residence,
+    .results,
+    .days-section,
+    .results-section {
+        max-width: 75%;
+    }
 
-  #input-field10 {
-    margin-right: 25px;
-  }
+    #input-field10 {
+        margin-right: 25px;
+    }
 
-  #input-field11 {
-    margin-right: 20px;
-  }
+    #input-field11 {
+        margin-right: 20px;
+    }
 
-  header,
-  .total-residence,
-  .results,
-  .results-section {
-    border: none;
-  }
+    header,
+    .total-residence,
+    .results,
+    .results-section {
+        border: none;
+    }
 
-  .heading-space {
-    margin-top: 40px;
-  }
+    .heading-space {
+        margin-top: 40px;
+    }
 }
+
 /*Styling for pop up information on mouse hover over information icon*/
 /* Hover tooltip code based on W3 Schools CSS Tooltip tutorial*/
 .tooltip {
-  position: relative;
-  display: inline-block;
+    position: relative;
+    display: inline-block;
 }
 
 .tooltip .tooltip-text {
-  visibility: hidden;
-  width: 120px;
-  background-color: black;
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  padding: 10px 5px 10px 5px;
-  /* Position the tooltip text */
-  position: absolute;
-  z-index: 1;
-  /*Position the tooltip to the left*/
-  top: -10px;
-  left: 105%;
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 10px 5px 10px 5px;
+    /* Position the tooltip text */
+    position: absolute;
+    z-index: 1;
+    /*Position the tooltip to the left*/
+    top: -10px;
+    left: 105%;
 }
 
 .tooltip:hover .tooltip-text {
-  visibility: visible;
+    visibility: visible;
 }
 
 .results {
-  display: none;
+    display: none;
 }
