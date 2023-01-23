@@ -83,9 +83,9 @@ All tests peformed on 'bluebindy.github.io/residency-checker/' on Chrome, Safari
 | Test step | Outcome |
 | --- | --- |
 | Test action | Manually check upper and lower limits of entry toggles on input boxes on Chrome, Firefox and Safari. |
-| Expected outcome | Values above 366 and below 0 should not be possible. |
-| Notes | None to add |
-| Test outcome | PASS |
+| Expected outcome | Values above 366 and below 0 should not be possible so data entered is valid. |
+| Notes | HTML code includes maximum and minimum limits on numeric entries in input boxes. The toggle elements reflected this code (making it impossible to toggle above 366 or below 0), but it was possible to override these limits by manually entering data. This was found to be a known limitation of HTML. To compensate for this, JavaScript code was added to generate a user alert when invalid values were entered and requiring user correction before proceeding. Although the HTML limitations on data only restricted input when using the toggles and not on manual input it was left as minimal data validation in the event the Javascript code failed.  |
+| Test outcome | FAIL (Technical PASS but UX FAIL)  |
 
 ### Test label: Info icon mouseover
 | Test step | Outcome |
@@ -114,8 +114,8 @@ All tests peformed on 'bluebindy.github.io/residency-checker/' on Chrome, Safari
 ### Test label: Error message for incomplete data 
 | Test step | Outcome |
 | --- | --- |
-| Test action | Enter any pattern of data (valid or invalid) as long as one of the essential input boxes is missing data and click submit. Repeat by entering valid data into both essential input boxes.  |
-| Expected outcome | On submit, an empty but essential input box should produce an alert message requesting both essential input boxes have an entry before continuing. When both essential input boxes have data, after submit is clicked, valid data should produce a results summary.  |
+| Test action | Enter any pattern of data (valid or invalid) as long as one of the required input boxes (the current year in First step and the input box in Second step) is missing data and click submit. Repeat by entering valid data into both required input boxes.  |
+| Expected outcome | On submit, an empty but essential input box should produce an alert message requesting both essential input boxes have an entry before continuing. When both essential input boxes have data, after submit is clicked, valid data should produce a results summary. When both essential input boxes have data, after submit is clicked, invalid data (below 0 or above 366) should produce an invalid data user alert.  |
 | Notes | None to add |
 | Test outcome | PASS |
 
@@ -123,7 +123,7 @@ All tests peformed on 'bluebindy.github.io/residency-checker/' on Chrome, Safari
 | Test step | Outcome |
 | --- | --- |
 | Test action | Enter data in both essential text boxes. Enter invalid data (below 0 or above 366) in any input box (essential text box or other) and click submit. Repeat with valid data. |
-| Expected outcome | When invalid data is entered, an alert message should appear requesting only data between 0 and 366 days. Note that intended action is for this alert to be overridden by an alert message requiring both essential input boxes if either essential input box is empty. No alert message should appear if essential input boxes plus any other have valid data entered; instead a summary report should be produced. Empty non-essential input boxes should not create an alert. |
+| Expected outcome | When invalid data is entered (but required input exists), an alert message should appear requesting only data between 0 and 366 days. Note that intended action is for this alert to be overridden, and preceded, by an alert message requiring both essential input boxes if either essential input box is empty. No alert message should appear if essential input boxes plus any other have valid data entered; instead a summary report should be produced. Empty non-essential input boxes should not create an alert. |
 | Notes | None to add |
 | Test outcome | PASS |
 
@@ -255,7 +255,7 @@ All tests peformed on 'bluebindy.github.io/residency-checker/' on Chrome, Safari
 | --- | --- |
 | Test action | Perform a JSHint validation test |
 | Expected outcome | Validation passed with zero issues and ideally no warnings (desired but not essential.) |
-| Notes | None to add |
+| Notes | JSHint was configured for New JavaScript Features (ES6) to prevent the ES6 warnings that occured without that configuration. |
 | Test outcome | PASS |
 
 

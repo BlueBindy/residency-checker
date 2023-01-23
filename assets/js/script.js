@@ -55,7 +55,7 @@ function generateResult(sumOfYears, contResidencyInput) {
  * time (either invalid input or insufficient user entries) even if
  * both errors are made simultaneously.
  */
-function submitButton() {
+function submitData() {
     // days-section does not take .value as it is class name for a div
     // which doesn't have a value, so throws undefined
     let contResidencyInput = parseInt(
