@@ -10,10 +10,10 @@
  */
 function generateResult(sumOfYears, contResidencyInput) {
     // jshint strict: true
-    "use strict";
-    let resultMessage1 = "";
-    let resultMessage2 = "";
-    let resultMessage3 = "";
+    'use strict';
+    let resultMessage1 = '';
+    let resultMessage2 = '';
+    let resultMessage3 = '';
     if (sumOfYears > 1616) {
         resultMessage1 = `You have ${sumOfYears} resident days in the \
         last 9 years. This is enough to meet the total residency \
@@ -42,11 +42,11 @@ function generateResult(sumOfYears, contResidencyInput) {
         the essential residency criteria. You'll need to meet both \
         criteria simultaneously before your application is considered eligible.`;
     }
-    let showResults = document.getElementsByClassName("results")[0];
-    document.getElementById("display-resultpopup1").innerHTML = resultMessage1;
-    document.getElementById("display-resultpopup2").innerHTML = resultMessage2;
-    document.getElementById("display-resultpopup3").innerHTML = resultMessage3;
-    showResults.style.display = "block";
+    let showResults = document.getElementsByClassName('results')[0];
+    document.getElementById('display-resultpopup1').innerHTML = resultMessage1;
+    document.getElementById('display-resultpopup2').innerHTML = resultMessage2;
+    document.getElementById('display-resultpopup3').innerHTML = resultMessage3;
+    showResults.style.display = 'block';
 }
 /**
  * On submit, issues user alert if user input is invalid or incomplete, 
@@ -59,9 +59,9 @@ function submitButton() {
     // days-section does not take .value as it is class name for a div 
     // which doesn't have a value, so throws undefined
     let contResidencyInput = parseInt(
-        document.getElementById("input-field11").value
+        document.getElementById('input-field11').value
     );
-    let firstYearInput = parseInt(document.getElementById("input-field1").value);
+    let firstYearInput = parseInt(document.getElementById('input-field1').value);
     if (contResidencyInput && firstYearInput) {
         if (
             contResidencyInput <= 366 &&
@@ -69,18 +69,18 @@ function submitButton() {
             firstYearInput <= 366 &&
             firstYearInput >= 0
         ) {} else {
-            alert("All entries must be between 0 and 366.");
+            alert('All entries must be between 0 and 366.');
             return;
         }
     } else {
         alert(
-            "You must enter your days of residency for at least the \
+            'You must enter your days of residency for at least the \
             current calendar year (in First step) as well as enter your \
-            residential days within the last 365 days (Second step) to continue."
+            residential days within the last 365 days (Second step) to continue.'
         );
         return;
     }
-    let inputTag = document.getElementsByClassName("input-field");
+    let inputTag = document.getElementsByClassName('input-field');
     let validInput = true;
     let sumOfYears = 0;
     for (let i = 0; i < inputTag.length; i++) {
@@ -99,18 +99,19 @@ function submitButton() {
     if (!validInput) {
         // this alert needs to be outside else block above to 
         // prevent it being triggered by every black input boxß
-        alert("Please only enter a number of days between 0 and 366");
+        alert('Please only enter a number of days between 0 and 366');
     }
     generateResult(sumOfYears, contResidencyInput);
 }
 
-let showResults = document.getElementsByClassName("results")[0];
-showResults.style.display = "none";
+let showResults = document.getElementsByClassName('results')[0];
+showResults.style.display = 'none';
 
 // Code structure for inserting current year suggested by 
 // Riley Jones on StackOverflow 
 /**
- * Displays correct calendar years, and partial years where appropriate, for eligible period of total residency.
+ * Displays correct calendar years, and partial years where appropriate, 
+ * for eligible period of total residency.
  */
 let todaysDate = new Date();
 let thisYear = todaysDate.getFullYear();
@@ -120,27 +121,27 @@ let earliestYear = todaysDate.getFullYear() - 9;
 let yearAgo = todaysDate.getFullYear() - 1;
 
 document.getElementById(
-    "current-year"
+    'current-year'
 ).innerHTML = `${new Date().getFullYear()}*`;
-document.getElementById("current-minusone").innerHTML =
+document.getElementById('current-minusone').innerHTML =
     new Date().getFullYear() - 1;
-document.getElementById("current-minustwo").innerHTML =
+document.getElementById('current-minustwo').innerHTML =
     new Date().getFullYear() - 2;
-document.getElementById("current-minusthree").innerHTML =
+document.getElementById('current-minusthree').innerHTML =
     new Date().getFullYear() - 3;
-document.getElementById("current-minusfour").innerHTML =
+document.getElementById('current-minusfour').innerHTML =
     new Date().getFullYear() - 4;
-document.getElementById("current-minusfive").innerHTML =
+document.getElementById('current-minusfive').innerHTML =
     new Date().getFullYear() - 5;
-document.getElementById("current-minussix").innerHTML =
+document.getElementById('current-minussix').innerHTML =
     new Date().getFullYear() - 6;
-document.getElementById("current-minusseven").innerHTML =
+document.getElementById('current-minusseven').innerHTML =
     new Date().getFullYear() - 7;
-document.getElementById("current-minuseight").innerHTML =
+document.getElementById('current-minuseight').innerHTML =
     new Date().getFullYear() - 8;
 document.getElementById(
-    "current-minusnine"
+    'current-minusnine'
 ).innerHTML = `Days <b>since</b> ${thisDay}/${thisMonth + 1}/${earliestYear}`;
-document.getElementById("last-365").innerHTML = `Days <b>from</b> ${thisDay}/${
+document.getElementById('last-365').innerHTML = `Days <b>from</b> ${thisDay}/${
     thisMonth + 1
   }/${yearAgo} <br> <b>to</b> ${thisDay}/${thisMonth + 1}/${thisYear}*`;
