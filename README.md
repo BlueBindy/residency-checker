@@ -85,7 +85,7 @@ All tests peformed on 'bluebindy.github.io/residency-checker/' on Chrome, Safari
 | Test action | Manually check upper and lower limits of entry toggles on input boxes on Chrome, Firefox and Safari. |
 | Expected outcome | Values above 366 and below 0 should not be possible so data entered is valid. |
 | Notes | HTML code includes maximum and minimum limits on numeric entries in input boxes. The toggle elements reflected this code (making it impossible to toggle above 366 or below 0), but it was possible to override these limits by manually entering data. This was found to be a known limitation of HTML. To compensate for this, JavaScript code was added to generate a user alert when invalid values were entered and requiring user correction before proceeding. Although the HTML limitations on data only restricted input when using the toggles and not on manual input it was left as minimal data validation in the event the Javascript code failed.  |
-| Test outcome | FAIL (Technical PASS but UX FAIL)  |
+| Test outcome | FAIL (Technical PASS but UX FAIL; subsequent UX PASS via JavaScript solution instead of toggle limits)  |
 
 ### Test label: Info icon mouseover
 | Test step | Outcome |
