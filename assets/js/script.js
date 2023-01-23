@@ -74,6 +74,8 @@ function submitButton() {
         }
     } else {
         alert(
+            //fix for JSHint suggested by user1548072 on StackOverflow
+            /*jshint multistr: true */
             "You must enter your days of residency for at least the \
               current calendar year (in First step) as well as enter your \
               residential days within the last 365 days (Second step) to continue."
