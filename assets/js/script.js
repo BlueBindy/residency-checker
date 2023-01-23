@@ -10,14 +10,14 @@ function generateResult(sumOfYears, contResidencyInput) {
     let resultMessage2 = "";
     let resultMessage3 = "";
     if (sumOfYears > 1616) {
-       resultMessage1 = `You have ${sumOfYears} resident days in the last 9 years. This is enough to meet the total residency requirement including allowable absences.`;
+       resultMessage1 = `You have ${sumOfYears} resident days in the last 9 years. This is enough to meet the total residency requirement including allowable absences (1826 days less allowable absences of 210 days).`;
     } else {
-       resultMessage1 = `You have ${sumOfYears} resident days in the last 9 years. This is not enough to meet the miniumum total residency requirement.`;
+       resultMessage1 = `You have ${sumOfYears} resident days in the last 9 years. This is not enough to meet the miniumum total residency requirement of 1616 days (1826 days less allowable absences of 210 days).`;
     }
     if (contResidencyInput >= 323) {
-       resultMessage2= `You have ${contResidencyInput} days of continuous residency in the last year. This is enough to satisfy the continuous residency requirement of at least 323 days.`;
+       resultMessage2= `You have ${contResidencyInput} days of continuous residency in the last 365 days. This is enough to satisfy the continuous residency requirement of at least 323 days.`;
     } else {
-        resultMessage2= `You have ${contResidencyInput} days of continuous residency in the last year. This is not enough to satisfy the continuous residency requirement of at least 323 days.`;
+        resultMessage2= `You have ${contResidencyInput} days of continuous residency in the last 365 days. This is not enough to satisfy the continuous residency requirement of at least 323 days.`;
     }
     if (contResidencyInput >= 323 && sumOfYears > 1616) {
        resultMessage3= `Congratulations, you have met both of the residency requirements for a naturalisation application!`;
@@ -45,7 +45,7 @@ function submitButton() {
             return;
         }
     } else {
-        alert('You must enter your days of residency for at least the current calendar year as well as enter your residential days within the last 365 days (continuous residency) to continue.');
+        alert('You must enter your days of residency for at least the current calendar year (in First step) as well as enter your residential days within the last 365 days (Second step) to continue.');
         return;
     }
     let inputTag = document.getElementsByClassName('input-field');
@@ -86,7 +86,7 @@ let thisMonth = todaysDate.getMonth();
 let earliestYear = todaysDate.getFullYear() - 9;
 let yearAgo = todaysDate.getFullYear() - 1;
 
-document.getElementById("current-year").innerHTML = (new Date().getFullYear());
+document.getElementById("current-year").innerHTML = (`${new Date().getFullYear()}*`);
 document.getElementById("current-minusone").innerHTML = (new Date().getFullYear() - 1);
 document.getElementById("current-minustwo").innerHTML = (new Date().getFullYear() - 2);
 document.getElementById("current-minusthree").innerHTML = (new Date().getFullYear() - 3);
@@ -96,4 +96,4 @@ document.getElementById("current-minussix").innerHTML = (new Date().getFullYear(
 document.getElementById("current-minusseven").innerHTML = (new Date().getFullYear() - 7);
 document.getElementById("current-minuseight").innerHTML = (new Date().getFullYear() - 8);
 document.getElementById("current-minusnine").innerHTML = (`Days <b>since</b> ${thisDay}/${thisMonth + 1}/${earliestYear}`);
-document.getElementById("last-365").innerHTML = (`Days <b>from</b> ${thisDay}/${thisMonth + 1}/${yearAgo} <br> <b>to</b> ${thisDay}/${thisMonth + 1}/${thisYear}`);
+document.getElementById("last-365").innerHTML = (`Days <b>from</b> ${thisDay}/${thisMonth + 1}/${yearAgo} <br> <b>to</b> ${thisDay}/${thisMonth + 1}/${thisYear}*`);
