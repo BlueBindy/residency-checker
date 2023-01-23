@@ -255,7 +255,8 @@ Icon in logo from Fontawesome: https://fontawesome.com/
 Icon used as favicon from Icons 8, used under licence (free for link) https://icons8.com/license
 Favicon insertion technique based on W3 schools tutorial
 File format converted using convertio.co 
-Sweetalert used to modify generic user alerts 
+Sweetalert used to modify generic user alerts
+Code formatted using Prettier on Glitch 
 Code structure for inserting current year into HTML suggested by Riley Jones on StackOverflow
 README structure based on Code Institute's example. The structure and approach to Testing reflects guidance from Brian Macharia.
 
