@@ -29,7 +29,6 @@ function generateResult(sumOfYears, contResidencyInput) {
    document.getElementById("display-resultpopup2").innerHTML = resultMessage2;
    document.getElementById("display-resultpopup3").innerHTML = resultMessage3;
    showResults.style.display = 'block';
-   
 }
 /**
  * On submit, issues user alert if user input is invalid or incomplete, otherwise calls calculated eligibility message for user.
