@@ -42,7 +42,7 @@ header,
     background-color: white;
     max-width: 65%;
 }
-.results {
+.results, .results-section {
     border: none;
 }
 
@@ -93,7 +93,7 @@ input {
 
 label {
     display: table-cell;
-    text-align: right;
+    text-align: left;
 }
 
 div.days-data,

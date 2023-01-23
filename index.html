@@ -45,6 +45,7 @@
                     though note this validation only restricts input via up and down arrow key in input box, 
                 not when user enters values using keypad.-->
                 <!-- Code structure for inserting current year suggested by Riley Jones on StackOverflow-->
+                <!--for attribute removed from label as input is a hidden form control and it fails W3 Validator when included-->
                 <label><span id="current-year"></span></label>
                 <input name="current-year" class="input-field" type="number" min="0" max="366" id="input-field1"
                     aria-label="Input box">
