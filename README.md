@@ -203,6 +203,16 @@ All tests peformed on 'bluebindy.github.io/residency-checker/' on Chrome, Safari
 | Notes | None to add |
 | Test outcome | PASS |
 
+### Test label: Console errors
+| Test step | Outcome |
+| --- | --- |
+| Test action | Review console for warnings and errors in Chrome Developer Tools|
+| Expected outcome | No errors and (ideally but not essential) no warnings. |
+| Notes | On review, when the deployed site was viewed in a non-Incognito Chrome broswer, a warning error was reported in console (Error with Permissions-Policy header: Unrecognized feature: 'interest-cohort'.) Takash Futada on StackOverflow suggests that this error is caused because 'All GitHub Pages sites served from the github.io domain will now have a Permissions-Policy: interest-cohort=() header set' (quote from github.blog) disabling Google's 3rd party cookie alternative. A potential fix (<meta http-equiv="Permissions-Policy" content="interest-cohort=()" />), suggested by Saff.gh on StackOverflow did prevent the console error, but caused W3 HTML validator to return an error (Bad value Permissions-Policy for attribute http-equiv on element meta.) As the console error is not reported when the deployed site is viewed in an Incognito Chrome browser and the suggested fix does create a W3 Validator error it was removed and the non-Incognito browser error was ignored.  |
+| Test outcome | PASS |
+
+
+
 
 ### 2. Browser Compatibility testing
 ### Test label: Browser compatibility
@@ -210,11 +220,11 @@ All tests peformed on 'bluebindy.github.io/residency-checker/' on Chrome, Safari
 | --- | --- |
 | Test action | Request website (using 'bluebindy.github.io/residency-checker/') on Chrome, Firefox and Safari browsers.|
 | Expected outcome | Website appears (including all images) as expected, with all elements, within 2 seconds. |
-| Notes | None to add |
+| Notes | When the locally-hosted website was viewed in a non-Incognito Chrome window, an error occured (Uncaught (in promise) Error: A listener indicated an asynchronous response by returning true, but the message channel closed before a response was received.) StackOverflow contributor, Chrostip Schaejn, suggested that this was caused by various Chrome extensions and could be resolved by whitelisting the relevant extension. This causal analysis was supported when the deployed site was tested in an Incognito Chrome broswer and the error did not occur. As such, no action (eg whitelisting) was taken.  |
 | Test outcome | PASS |
 
 ### 3. Accesibility testing
-### Test label: Browser compatibility
+### Test label: Accessibility compatibility
 | Test step | Outcome |
 | --- | --- |
 | Test action | Perform two Lighthouse tests using Chrome Developer Tools (First Mode Navigation and Device Mobile and then second, Mode Navigation and Device Desktop.)|
@@ -237,8 +247,8 @@ All tests peformed on 'bluebindy.github.io/residency-checker/' on Chrome, Safari
 | --- | --- |
 | Test action | Perform a W3 HTML validation test on website page |
 | Expected outcome | W3 HTML validation passed with zero errors and ideally no warnings (desired not essential) |
-| Notes | None to add |
-| Test outcome | PASS |
+| Notes | 1) W3 Validator returns multiple Info notices regarding trailing slashes on void elements. These trailing slashes are inserted by the Prettier extension in Glitch when code is uploaded for formatting and code length shortening. Despite the W3 Info notice, they were left in place after testing that the potential clash with unquoted attribute values was not causing the website to malfunction. A second W3 Validator error regarding the for attributes in labels was reported. This was found to be a coding syntax error and was fixed and found to be resolved on subsequent testing.  |
+| Test outcome | PASS after modifications. |
 
 ### Javascript validator testing
 | Test step | Outcome |
