@@ -104,7 +104,7 @@ div.final-year {
     display: table-row;
 }
 
-.input-field {
+.input-field, #input-field11 {
     max-width: 50px;
 }
 

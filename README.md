@@ -231,9 +231,9 @@ All tests peformed on 'bluebindy.github.io/residency-checker/' on Chrome, Safari
 | Test step | Outcome |
 | --- | --- |
 | Test action | Request website (using 'bluebindy.github.io/residency-checker/') on Chrome, Firefox and Safari browsers.|
-| Expected outcome | Website appears (including all images) as expected, with all elements, within 2 seconds. |
-| Notes | When the locally-hosted website was viewed in a non-Incognito Chrome window, an error occured (Uncaught (in promise) Error: A listener indicated an asynchronous response by returning true, but the message channel closed before a response was received.) StackOverflow contributor, Chrostip Schaejn, suggested that this was caused by various Chrome extensions and could be resolved by whitelisting the relevant extension. This causal analysis was supported when the deployed site was tested in an Incognito Chrome broswer and the error did not occur. As such, no action (eg whitelisting) was taken.  |
-| Test outcome | PASS |  
+| Expected outcome | Website appears (including all images) as expected, with all elements, within 2 seconds. Site is responsive to screen width changes. Submit button, error messages and response message perform as expected. |
+| Notes | 1. When the locally-hosted website was viewed in a non-Incognito Chrome window, an error occured (Uncaught (in promise) Error: A listener indicated an asynchronous response by returning true, but the message channel closed before a response was received.) StackOverflow contributor, Chrostip Schaejn, suggested that this was caused by various Chrome extensions and could be resolved by whitelisting the relevant extension. This causal analysis was supported when the deployed site was tested in an Incognito Chrome broswer and the error did not occur. As such, no action (eg whitelisting) was taken. 2. Initial testing on Firefox resulted in input boxes not responding as expected on smaller screen widths. Width was used on input boxes to set a maximum width and the issue was resolved.  |
+| Test outcome | PASS after modifications |  
 
 
 ## 3. Accesibility testing
