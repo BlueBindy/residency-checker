@@ -22,7 +22,7 @@ This screenshot is taken after a user has entered sample residential days, hit s
 ## Page on 404 error  
 A screenshot of the page that loads when a non-existent URL is sought (the 404 error page) is found below. This page notifies the user of the error and provides a link to navigate back to the existing page. 
 
-![Screenshot of website page](/docs/docs-images/screenshot-404.png "Website screenshot")
+![Screenshot of website page](/docs/docs-images/screenshot-404.png "Website screenshot 404 error page")
 
 
 
@@ -44,30 +44,38 @@ The single page structure is intended to reduce confusion by making the user jou
 
 ## Skeleton (insert wirefames)
 
-Skeleton
-The wireframe desktop version:
+A wireframe was mocked up before development began. The design intention was that the desktop and the mobile version would share a similar layout and not require significant changes in flow or structure. For this reason, separate wireframes were not created by device type. The wireframe including the results message (post submit) can be seen below. <br>  
 
-Screenshot of wireframe for home page pre use
+![Screenshot of website page](/docs/docs-images/wireframe.png "Wireframe")<br>  
 
-The wireframe for page post use: Screenshot of wireframe 
 
-The wireframe for page pre use, mobile version:
-Screenshot of wireframe
 
 ## Surface
 The colour scheme is primarily limited to black text on a white page. The limited palette of this design and use of whitespace is intended to maximise simplicity, increase credibility and readability. The title and associated icon (together serving as a logo) is green as a visual reference to Ireland. The sans serif font (Roboto) was selected for its modernity, cleanliness and simplicity, to match the overall design. 
 
 ## Features
 ### Features included in this current version
-The website includes a an information icon explaining why the ninth year is linked to the current date (with details revealed on mouseover.) 
+The calendar years presented on the website are calculated to ensure they automatically reflect the eligibile period (9 years prior to the current day's date.) Similarly, the previous 365 period that determines 'continuous residency' is calculated automatically based on the the 365 days prior to the date the user is engaging with the website. These dates can be seen in the screenshot below. The mininum required user input is highlighted with asterixes and noted in the explanatory text.
 
-The principle purpose of the website is achieved by the provision of an eligibility summary report presented on user submission. This is designed to appear after the user clicks submit to increase the prominence after calculation and to maximise simplicity prior to submission.
+![Screenshot of website page](/docs/docs-images/dates.png "Website screenshot of dates")
 
-Entry to the input boxes can be made by the toggle buttons available in each input box, and these are automatically limited to valid data. However, the user can also type data into the input boxes and so user error warnings are provided if the user enters invalid data. Similarly, if the user does not complete all the essential sections they receive an error warning and request to correct it. If the user makes both errors simultaneously (invalid and incomplete data) they are asked to complete all essential sections first, and if there is still invalid data on second submission they receive a second invalid data warning. This is to prevent the user being presented with two error warnings immediately after each other, as this makes for a poor user experience and potentially increases confusion. 
+The website includes a an information icon explaining why the ninth year is linked to the current date (with details revealed on mouseover) and can be seen on the screenshot below
 
-The calendar years presented on the website are calculated to ensure they automatically reflect the eligibile period (9 years prior to the current day's date.) Similarly, the previous 365 period that determines 'continuous residency' is calculated automatically based on the the 365 days prior to the date the user is engaging with the website. 
+![Screenshot of website page](/docs/docs-images/infoicon.png "Website screenshot of info icon")
 
-There is also a 404 error page with a link to the correct page so the user can navigate there.
+Entries to the input boxes can be made by the toggle buttons available in each input box, and these are automatically limited to valid data. However, the user can override these limits and type invalid data into the input boxes.  
+
+For this reason, user error warnings are produced if the user enters invalid data. Similarly, if the user does not complete all the essential sections they receive an error warning and a request to correct it. If the user makes both errors simultaneously (invalid and incomplete data) they are asked to complete all essential sections first, and if there is still invalid data on second submission they receive a second invalid data warning. This is to prevent the user being presented with two error warnings immediately after each other, as this makes for a poor user experience and potentially increases confusion. An example of the error warning can be seen in the screenshot below.
+![Screenshot of website page](/docs/docs-images/errormessage.png "Website screenshot of error message")
+
+The principle purpose of the website is achieved by the provision of an eligibility summary report presented on user submission. This is designed to appear after the user clicks submit to increase the prominence after calculation and to maximise simplicity prior to submission. An example of the type of results produced can be seen below.
+
+![Screenshot of website page](/docs/docs-images/results.png "Website screenshot of results")
+
+
+There is also a 404 error page with a link to the correct page so the user can navigate there, illustrated below.
+
+![Screenshot of website page](/docs/docs-images/screenshot-404.png "Website screenshot 404 error page")
 
 ### Features planned for later versions
 A second tool is planned for later versions - specifically a tool to assess whether the user has the requisite documents to prove their residency once they have achieved eligible residential days.
@@ -87,7 +95,7 @@ All tests peformed on 'bluebindy.github.io/residency-checker/' on Chrome, Safari
 | --- | --- |
 | Test action | Manually check upper and lower limits of entry toggles on input boxes on Chrome, Firefox and Safari. |
 | Expected outcome | Values above 366 and below 0 should not be possible to prevent invalid data from being entered. |
-| Notes | HTML code includes maximum and minimum limits on numeric entries in input boxes. The toggle elements reflected this code (making it impossible to toggle above 366 or below 0), but it was possible to override these limits by manually entering data. On researhc, this was found to be a known and expected limitation of HTML rather than a coding error. To compensate for this, JavaScript code was added to generate a user alert when invalid values were entered and requiring user correction before proceeding. Although the HTML limitations on data only restricted input when using the toggles and not on manual input it was left in place to provide minimal data validation in the event the Javascript code failed.  |
+| Notes | HTML code includes maximum and minimum limits on numeric entries in input boxes. The toggle elements reflected this code (making it impossible to toggle above 366 or below 0), but it was possible to override these limits by manually entering data. On research, this was found to be a known and expected limitation of HTML rather than a coding error. To compensate for this, JavaScript code was added to generate a user alert when invalid values were entered and requiring user correction before proceeding. Although the HTML limitations on data only restricted input when using the toggles and not on manual input it was left in place to provide minimal data validation in the event the Javascript code failed.  |
 | Test outcome | FAIL with alternative introduced. (Technical PASS but UX FAIL; subsequent UX PASS via JavaScript solution instead of toggle limits)  |  
 
 
@@ -186,7 +194,7 @@ All tests peformed on 'bluebindy.github.io/residency-checker/' on Chrome, Safari
 | --- | --- |
 | Test action | Manually review all files and directories |
 | Expected outcome | Index.html is registered as 'Home' page via listing as entry file for the site on GitHub Pages. All static files to be published on the website are within assets/images/ . All files for README.md are within docs/ and not within assets/ . All css files are within assets/css/ .All files are grouped by type. |
-| Notes | None to add |
+| Notes | File path for favicon includes root directory to enable visibility in the deployed site on Chrome. |
 | Test outcome | PASS |  
 
 
@@ -204,7 +212,7 @@ All tests peformed on 'bluebindy.github.io/residency-checker/' on Chrome, Safari
 | --- | --- |
 | Test action | Manually minimise desktop screen size and inspect each web page. Repeat on Chrome, Firefox and Safari. Repeat using Chrome Developer Tools set for iPhone 5/SE (320 by 568), Surface Duo (540 by 720), iPad Mini (768 by 1024) and Pro Display XDR (6016 by 3384). |
 | Expected outcome | When the website is viewed on a range of screen sizes, the layout automatically re-assembles in an intuitive, legible and expected layout. Navigation menu, social media links, email form and embedded text links are accessible. |
-| Notes | None to add |
+| Notes | Style modifications to the input box width was required for acceptable responsivity in Safari. Acceptable results obtained after this modification. |
 | Test outcome | PASS |
 
 
@@ -212,9 +220,9 @@ All tests peformed on 'bluebindy.github.io/residency-checker/' on Chrome, Safari
 | Test step | Outcome |
 | --- | --- |
 | Test action | Manually review all HTML (particularly attributes) and CSS (particularly rules) code, and all file and directory names.|
-| Expected outcome | No uppercase letters used; no spaces found. Multiple words in HTML and CSS declarative code are joined using hyphens, except for repository level names which should use an underscore where necessary. All names are distinctive and intrinsically meaningful. CSS code is filed in an file external to HTML pages and linked to the HTML page in the HEAD element. JavaScript link is at bottom of html body section |
-| Notes | None to add |
-| Test outcome | PASS |  
+| Expected outcome | No uppercase letters used; no spaces found. Multiple words in HTML and CSS declarative code are joined using hyphens, except for repository level names which should use an underscore where necessary. All names are distinctive and intrinsically meaningful. CSS code is filed in an file external to HTML pages and linked to the HTML page in the HEAD element. JavaScript link is at bottom of html body section. Code length does not impede readability. Javascript does not mix quote types. Code commentary provides useful information to a new reader. Javascript has function comments. |
+| Notes | Prettier in Glitch used to format code length. |
+| Test outcome | PASS after modifications |  
 
 
 ### Test label: Console errors
@@ -223,16 +231,16 @@ All tests peformed on 'bluebindy.github.io/residency-checker/' on Chrome, Safari
 | Test action | Review console for warnings and errors in Chrome Developer Tools|
 | Expected outcome | No errors and (ideally but not essential) no warnings. |
 | Notes | On review, when the deployed site was viewed in a non-Incognito Chrome broswer, a warning error was reported in console (Error with Permissions-Policy header: Unrecognized feature: 'interest-cohort'.) Takash Futada on StackOverflow suggests that this error is caused because 'All GitHub Pages sites served from the github.io domain will now have a Permissions-Policy: interest-cohort=() header set' (quote from github.blog) disabling Google's 3rd party cookie alternative. A potential fix (<meta http-equiv="Permissions-Policy" content="interest-cohort=()" />), suggested by Saff.gh on StackOverflow did prevent the console error, but caused W3 HTML validator to return an error (Bad value Permissions-Policy for attribute http-equiv on element meta.) As the console error is not reported when the deployed site is viewed in an Incognito Chrome browser and the suggested fix does create a W3 Validator error it was removed and the non-Incognito browser error was ignored.  |
-| Test outcome | PASS |  
+| Test outcome | PASS after modifications |  
 
 
 ## 2. Browser Compatibility testing
 ### Test label: Browser compatibility
 | Test step | Outcome |
 | --- | --- |
-| Test action | Request website (using 'bluebindy.github.io/residency-checker/') on Chrome, Firefox and Safari browsers.|
-| Expected outcome | Website appears (including all images) as expected, with all elements, within 2 seconds. Site is responsive to screen width changes. Submit button, error messages and response message perform as expected. |
-| Notes | 1. When the locally-hosted website was viewed in a non-Incognito Chrome window, an error occured (Uncaught (in promise) Error: A listener indicated an asynchronous response by returning true, but the message channel closed before a response was received.) StackOverflow contributor, Chrostip Schaejn, suggested that this was caused by various Chrome extensions and could be resolved by whitelisting the relevant extension. This causal analysis was supported when the deployed site was tested in an Incognito Chrome broswer and the error did not occur. As such, no action (eg whitelisting) was taken. 2. Initial testing on Firefox resulted in input boxes not responding as expected on smaller screen widths. Width was used on input boxes to set a maximum width and the issue was resolved.  |
+| Test action | Request website (using 'bluebindy.github.io/residency-checker/') on Chrome, Firefox and Safari browsers. Manually inspect features of website.|
+| Expected outcome | Website appears (including all images) as expected, with all elements, within 2 seconds. Site is responsive to screen width changes. Submit button, error messages, response message, input toggle button, information mouseover icon, refresh action, favicon and 404 error page perform as expected. |
+| Notes | 1. When the locally-hosted website was viewed in a non-Incognito Chrome window, an error occured (Uncaught (in promise) Error: A listener indicated an asynchronous response by returning true, but the message channel closed before a response was received.) StackOverflow contributor, Chrostip Schaejn, suggested that this was caused by various Chrome extensions and could be resolved by whitelisting the relevant extension. This causal analysis was supported when the deployed site was tested in an Incognito Chrome broswer and the error did not occur. As such, no action (eg whitelisting) was taken. 2. Initial testing on Firefox resulted in input boxes not responding as expected on smaller screen widths. Width was used on input boxes to set a maximum width and the issue was resolved. 3. To view favicons in Safari the option needed to be selected from Preferences in the browser. Several sources noted that Chrome can only display favicon if it is not local, and initially the favicon was visible in the local browser but not in the deployed site. When the filepath was changed to include the root file name the favicon was visible on deployed site in Chrome (but predictably, not in the local site). Visibility in the deployed site was prioritised over visibility in the local site. 4. Some of the tests performed within Browser Compatibility were also undertaken in other tests, but duplication was acceptable for the sake of conservatism.  |
 | Test outcome | PASS after modifications |  
 
 
@@ -275,15 +283,22 @@ All tests peformed on 'bluebindy.github.io/residency-checker/' on Chrome, Safari
 
 
 # Acknowledgements and Copyright
-Fonts used were https://fonts.google.com/specimen/Roboto+Condensed 
-Icon in logo from Fontawesome: https://fontawesome.com/
-Icon used as favicon from Icons 8, used under licence (free for link) https://icons8.com/license
-Favicon insertion technique based on W3 schools tutorial
-File format converted using convertio.co 
-Sweetalert used to modify generic user alerts
-Code formatted using Prettier on Glitch 
-Code structure for inserting current year into HTML suggested by Riley Jones on StackOverflow
-README structure based on Code Institute's example. The structure and approach to Testing reflects guidance from Brian Macharia.
+Fonts used were https://fonts.google.com/specimen/Roboto+Condensed  
+
+Icon in logo from Fontawesome: https://fontawesome.com/  
+
+Icon used as favicon from Icons 8, used under licence (free for link) https://icons8.com/license  
+
+Favicon insertion technique based on W3 schools tutorial  
+
+File format converted using convertio.co   
+
+Code formatted using Prettier on Glitch   
+
+Code structure for inserting current year into HTML suggested by Riley Jones on StackOverflow  
+
+README structure based on Code Institute's example. The structure and approach to Testing reflects guidance from Brian Macharia.  
+
 
 Mentoring from Brian Macharia. All errors and ommissions the responsibility of Fiona Thompson.
 

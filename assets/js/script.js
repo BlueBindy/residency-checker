@@ -146,6 +146,6 @@ document.getElementById(
 document.getElementById("last-365").innerHTML = `Days <b>from</b> ${thisDay}/${
     thisMonth + 1
   }/${yearAgo} <br> <b>to</b> ${thisDay}/${thisMonth + 1}/${thisYear}*`;
-
+// Event listener for submit button
 const sendInput = document.getElementById('sendResults');
 sendInput.addEventListener('click', submitData);
