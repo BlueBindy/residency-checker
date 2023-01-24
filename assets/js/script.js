@@ -105,7 +105,6 @@ function submitData() {
     }
     generateResult(sumOfYears, contResidencyInput);
 }
-
 let showResults = document.getElementsByClassName("results")[0];
 showResults.style.display = "none";
 
@@ -147,3 +146,6 @@ document.getElementById(
 document.getElementById("last-365").innerHTML = `Days <b>from</b> ${thisDay}/${
     thisMonth + 1
   }/${yearAgo} <br> <b>to</b> ${thisDay}/${thisMonth + 1}/${thisYear}*`;
+
+  const sendInput = document.getElementById('sendResults');
+sendInput.addEventListener('click',submitData);
