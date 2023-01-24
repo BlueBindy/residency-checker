@@ -75,7 +75,7 @@ function submitData() {
     } else {
         alert(
             //fix for JSHint suggested by user1548072 on StackOverflow
-            /*jshint multistr: true */
+            //jshint multistr: true
             "You must enter your days of residency for at least the \
               current calendar year (in First step) as well as enter your \
               residential days within the last 365 days (Second step) to continue."
@@ -147,5 +147,5 @@ document.getElementById("last-365").innerHTML = `Days <b>from</b> ${thisDay}/${
     thisMonth + 1
   }/${yearAgo} <br> <b>to</b> ${thisDay}/${thisMonth + 1}/${thisYear}*`;
 
-  const sendInput = document.getElementById('sendResults');
-sendInput.addEventListener('click',submitData);
+const sendInput = document.getElementById('sendResults');
+sendInput.addEventListener('click', submitData);

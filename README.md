@@ -1,45 +1,49 @@
-### Introduction to Residency-Checker
-The Residency Checker website is a single-page HTML, CSS and JavaScript project. The goal for the website is to allow British citizens to check if they meet the residency requirement needed for Irish naturalisation. The requirement includes simultaneous satisfaction of two different residency requirements and this often confuses applicants. The website consists of a tool allowing users to enter their residency pattern content. The user is then presented with a summary of their elibigility. 
-## Demo
+# Introduction to Residency-Checker  
+
+The Residency Checker website is a single-page HTML, CSS and JavaScript project. The goal for the website is to allow British citizens to check if they meet the residency requirement needed for Irish naturalisation. The requirement includes simultaneous satisfaction of two different residency requirements and this often confuses applicants. The website consists of a tool allowing users to enter their residency pattern content. The user is then presented with a summary of their elibigility.  
+
+# Demo  
+
 <a href="https://bluebindy.github.io/residency-checker/">Click here for a live demo</a>
 
 Several screenshots of the website can be found below illustrating the progression of the site before and after user use.
 
 
-### Page on load
-This screenshot is what a user will see before they have entered any data. They can read an introduction to the website at the top of the page. They have input boxes to enter their data; an information icon presenting (on mouseover) an explanation of limits on the timeframe available for eligible days; and a submit button. If a user enters invalid data (that is, data that is less than 0 or greater than 366) and clicks submit they are presented with an alert asking them to adjust their entries to the valid range. If a user fails to enter residential days in the compulsory sections (the current calendar year and also the last 365 days continuous residence section) they receive an alert asking them to rectify their entries.
+## Page on load
+This screenshot is what a user will see before they have entered any data. They can read an introduction to the website at the top of the page. They have input boxes to enter their data; an information icon presenting (on mouseover) an explanation of limits on the timeframe available for eligible days; and a submit button. If a user enters invalid data (that is, data that is less than 0 or greater than 366) and clicks submit they are presented with an alert asking them to adjust their entries to the valid range. If a user fails to enter residential days in the compulsory sections (the current calendar year and also the last 365 days continuous residence section) they receive an alert asking them to rectify their entries.  
+
 
 ![Screenshot of website on page load](/docs/docs-images/screenshot-preuse.png "Website screenshot on page  load")
 
-### Page on submit
+## Page on submit
 This screenshot is taken after a user has entered sample residential days, hit submit and received their summary results. In this example, residential days have been entered for the most recent calendar year as well as the last 365 day period. Results of their eligibility have been presented in a box that appears on click of the submit button. The content of this box is not available until valid entries have been made and submit is clicked. When the screen is refreshed the page reloads with all entries cleared and summary results removed. 
 
 ![Screenshot of website page](/docs/docs-images/screenshot.png "Website screenshot")
 
-### Page on 404 error  
+## Page on 404 error  
 A screenshot of the page that loads when a non-existent URL is sought (the 404 error page) is found below. This page notifies the user of the error and provides a link to navigate back to the existing page. 
 
 ![Screenshot of website page](/docs/docs-images/screenshot-404.png "Website screenshot")
 
 
 
-## Technologies Used
+# Technologies Used
 HTML, CSS, JavaScript
 
-## UX
-# User Stories
+# UX
+## User Stories
 As a British citizen wanting to naturalise as Irish, I want a clear indication of whether my residency pattern is eligible. If it is not, I want a comparison of my current residency and what I would need to be eligible. 
 
-# Strategy
+## Strategy
 The strategic aim is to create a site that users find easy to use, gives clear answers and prevents common user errors. Ease of use is defined as relieving the user of any need to compare their residency to requirements or even understand the requirements, but merely enter their history of residence. The provision of clear answers is defined by a brief, factual assessment of their eligibility, with simple directions for remedy if necessary. The common errors that are to be prevented include invalid number of days in a year (fewer than 0 or greater than 366), or missing entries (that is, a failure to enter residential days in at least the most recent year in both sections.)
 
-# Scope
+## Scope
 This version is intended to offer a single tool as a minimum viable product (MVP). Subsequent iterations are intended to include a tool that allows the user to review the documents they have available to check if they meet the minimum requirements for proof of residency. 
 
-# Structure
+## Structure
 The single page structure is intended to reduce confusion by making the user journey obvious to the user. There is no navigation (except as a link on the 404 error page) and no external links (except the required credit for use of the favicon) to reduce clutter and maximise simplicity. The page is intended to be useable as a discrete page but it could be added to a broader website as a page as well. 
 
-# Skeleton (insert wirefames)
+## Skeleton (insert wirefames)
 
 Skeleton
 The wireframe desktop version:
@@ -51,10 +55,10 @@ The wireframe for page post use: Screenshot of wireframe
 The wireframe for page pre use, mobile version:
 Screenshot of wireframe
 
-# Surface
+## Surface
 The colour scheme is primarily limited to black text on a white page. The limited palette of this design and use of whitespace is intended to maximise simplicity, increase credibility and readability. The title and associated icon (together serving as a logo) is green as a visual reference to Ireland. The sans serif font (Roboto) was selected for its modernity, cleanliness and simplicity, to match the overall design. 
 
-# Features
+## Features
 ### Features included in this current version
 The website includes a an information icon explaining why the ninth year is linked to the current date (with details revealed on mouseover.) 
 
@@ -78,14 +82,15 @@ Fiona Thompson created the original repository under in GitHub under username Bl
 
 # Testing
 All tests peformed on 'bluebindy.github.io/residency-checker/' on Chrome, Safari and Firefox browsers on a 13-inch early 2015 Macbook Air using MacOS Monterey v12.6.2. The exception to this is the Lighthouse accesssibility test which was performed on Chrome only.
-### 1. Functionality Testing
+## 1. Functionality Testing
 ### Test label: Input box toggle limits
 | Test step | Outcome |
 | --- | --- |
 | Test action | Manually check upper and lower limits of entry toggles on input boxes on Chrome, Firefox and Safari. |
-| Expected outcome | Values above 366 and below 0 should not be possible so data entered is valid. |
-| Notes | HTML code includes maximum and minimum limits on numeric entries in input boxes. The toggle elements reflected this code (making it impossible to toggle above 366 or below 0), but it was possible to override these limits by manually entering data. This was found to be a known limitation of HTML. To compensate for this, JavaScript code was added to generate a user alert when invalid values were entered and requiring user correction before proceeding. Although the HTML limitations on data only restricted input when using the toggles and not on manual input it was left as minimal data validation in the event the Javascript code failed.  |
-| Test outcome | FAIL (Technical PASS but UX FAIL; subsequent UX PASS via JavaScript solution instead of toggle limits)  |
+| Expected outcome | Values above 366 and below 0 should not be possible to prevent invalid data from being entered. |
+| Notes | HTML code includes maximum and minimum limits on numeric entries in input boxes. The toggle elements reflected this code (making it impossible to toggle above 366 or below 0), but it was possible to override these limits by manually entering data. On researhc, this was found to be a known and expected limitation of HTML rather than a coding error. To compensate for this, JavaScript code was added to generate a user alert when invalid values were entered and requiring user correction before proceeding. Although the HTML limitations on data only restricted input when using the toggles and not on manual input it was left in place to provide minimal data validation in the event the Javascript code failed.  |
+| Test outcome | FAIL with alternative introduced. (Technical PASS but UX FAIL; subsequent UX PASS via JavaScript solution instead of toggle limits)  |  
+
 
 ### Test label: Info icon mouseover
 | Test step | Outcome |
@@ -93,7 +98,8 @@ All tests peformed on 'bluebindy.github.io/residency-checker/' on Chrome, Safari
 | Test action | Mouse over information icon on Chrome, Firefox and Safari. |
 | Expected outcome | Explanatory text should appear on mouseover and disappear when mouse moves away. |
 | Notes | None to add |
-| Test outcome | PASS |
+| Test outcome | PASS |  
+
 
 ### Test label: Calculation of days and dates for previous 9 years 
 | Test step | Outcome |
@@ -101,7 +107,8 @@ All tests peformed on 'bluebindy.github.io/residency-checker/' on Chrome, Safari
 | Test action | Manually review the calendar years presented on page load in the calendar year section  |
 | Expected outcome | Years presented on page load should show (in order down the page) current year through to 9 years previous. The ninth year should begin with a date 3287 days before current date. |
 | Notes | None to add |
-| Test outcome | PASS |
+| Test outcome | PASS |  
+
 
 ### Test label: Calculation of dates of last 365 days 
 | Test step | Outcome |
@@ -109,7 +116,8 @@ All tests peformed on 'bluebindy.github.io/residency-checker/' on Chrome, Safari
 | Test action | Manually review the range of 365 days presented on page load in the continuous residency section |
 | Expected outcome | The dates presented should be from 365 days before the current date to the current date |
 | Notes | None to add |
-| Test outcome | PASS |
+| Test outcome | PASS |  
+
 
 ### Test label: Error message for incomplete data 
 | Test step | Outcome |
@@ -117,7 +125,8 @@ All tests peformed on 'bluebindy.github.io/residency-checker/' on Chrome, Safari
 | Test action | Enter any pattern of data (valid or invalid) as long as one of the required input boxes (the current year in First step and the input box in Second step) is missing data and click submit. Repeat by entering valid data into both required input boxes.  |
 | Expected outcome | On submit, an empty but essential input box should produce an alert message requesting both essential input boxes have an entry before continuing. When both essential input boxes have data, after submit is clicked, valid data should produce a results summary. When both essential input boxes have data, after submit is clicked, invalid data (below 0 or above 366) should produce an invalid data user alert.  |
 | Notes | None to add |
-| Test outcome | PASS |
+| Test outcome | PASS |  
+
 
 ### Test label: Error message for invalid data 
 | Test step | Outcome |
@@ -125,7 +134,8 @@ All tests peformed on 'bluebindy.github.io/residency-checker/' on Chrome, Safari
 | Test action | Enter data in both essential text boxes. Enter invalid data (below 0 or above 366) in any input box (essential text box or other) and click submit. Repeat with valid data. |
 | Expected outcome | When invalid data is entered (but required input exists), an alert message should appear requesting only data between 0 and 366 days. Note that intended action is for this alert to be overridden, and preceded, by an alert message requiring both essential input boxes if either essential input box is empty. No alert message should appear if essential input boxes plus any other have valid data entered; instead a summary report should be produced. Empty non-essential input boxes should not create an alert. |
 | Notes | None to add |
-| Test outcome | PASS |
+| Test outcome | PASS |  
+
 
 ### Test label: Eligibility message
 | Test step | Outcome |
@@ -142,7 +152,8 @@ All tests peformed on 'bluebindy.github.io/residency-checker/' on Chrome, Safari
 | Test action | Peform a browser search for a url such as: https://bluebindy.github.io/residency-checker/xxxx  |
 | Expected outcome | A 404 error page should load alerting the user to the non-existence of the page and offering a link tthat successfully opens the existing page. |
 | Notes | None to add |
-| Test outcome | PASS |
+| Test outcome | PASS |  
+
 
 ### Test label: icon rendering
 | Test step | Outcome |
@@ -159,7 +170,8 @@ All tests peformed on 'bluebindy.github.io/residency-checker/' on Chrome, Safari
 | Test action | Click on both credit links for the favicon at the bottom of the page |
 | Expected outcome | Both links should open in a new tab. |
 | Notes | Note that when viewed from GitHub, the text links in README are not expected to open in a new window. Users who wish to open these links in a new tab can instead use: CTRL+click (on Windows and Linux) or CMD+click (on MacOS). |
-| Test outcome | PASS |
+| Test outcome | PASS |  
+
 
 ### Test label: Fonts
 | Test step | Outcome |
@@ -176,7 +188,8 @@ All tests peformed on 'bluebindy.github.io/residency-checker/' on Chrome, Safari
 | Test action | Manually review all files and directories |
 | Expected outcome | Index.html is registered as 'Home' page via listing as entry file for the site on GitHub Pages. All static files to be published on the website are within assets/images/ . All files for README.md are within docs/ and not within assets/ . All css files are within assets/css/ .All files are grouped by type. |
 | Notes | None to add |
-| Test outcome | PASS |
+| Test outcome | PASS |  
+
 
 ### Test label: Images and links include accessibility labels
 | Test step | Outcome |
@@ -184,7 +197,8 @@ All tests peformed on 'bluebindy.github.io/residency-checker/' on Chrome, Safari
 | Test action | Review all images and links for accessibility label or clarify why not present. |
 | Expected outcome | All semantically relevant images include self-explanatory accessibility label.All text links include self-explanatory label as part of text. |
 | Notes | None to add |
-| Test outcome | PASS |
+| Test outcome | PASS |  
+
 
 ### Test label: Responsivity
 | Test step | Outcome |
@@ -201,7 +215,8 @@ All tests peformed on 'bluebindy.github.io/residency-checker/' on Chrome, Safari
 | Test action | Manually review all HTML (particularly attributes) and CSS (particularly rules) code, and all file and directory names.|
 | Expected outcome | No uppercase letters used; no spaces found. Multiple words in HTML and CSS declarative code are joined using hyphens, except for repository level names which should use an underscore where necessary. All names are distinctive and intrinsically meaningful. CSS code is filed in an file external to HTML pages and linked to the HTML page in the HEAD element. JavaScript link is at bottom of html body section |
 | Notes | None to add |
-| Test outcome | PASS |
+| Test outcome | PASS |  
+
 
 ### Test label: Console errors
 | Test step | Outcome |
@@ -209,21 +224,20 @@ All tests peformed on 'bluebindy.github.io/residency-checker/' on Chrome, Safari
 | Test action | Review console for warnings and errors in Chrome Developer Tools|
 | Expected outcome | No errors and (ideally but not essential) no warnings. |
 | Notes | On review, when the deployed site was viewed in a non-Incognito Chrome broswer, a warning error was reported in console (Error with Permissions-Policy header: Unrecognized feature: 'interest-cohort'.) Takash Futada on StackOverflow suggests that this error is caused because 'All GitHub Pages sites served from the github.io domain will now have a Permissions-Policy: interest-cohort=() header set' (quote from github.blog) disabling Google's 3rd party cookie alternative. A potential fix (<meta http-equiv="Permissions-Policy" content="interest-cohort=()" />), suggested by Saff.gh on StackOverflow did prevent the console error, but caused W3 HTML validator to return an error (Bad value Permissions-Policy for attribute http-equiv on element meta.) As the console error is not reported when the deployed site is viewed in an Incognito Chrome browser and the suggested fix does create a W3 Validator error it was removed and the non-Incognito browser error was ignored.  |
-| Test outcome | PASS |
+| Test outcome | PASS |  
 
 
-
-
-### 2. Browser Compatibility testing
+## 2. Browser Compatibility testing
 ### Test label: Browser compatibility
 | Test step | Outcome |
 | --- | --- |
 | Test action | Request website (using 'bluebindy.github.io/residency-checker/') on Chrome, Firefox and Safari browsers.|
 | Expected outcome | Website appears (including all images) as expected, with all elements, within 2 seconds. |
 | Notes | When the locally-hosted website was viewed in a non-Incognito Chrome window, an error occured (Uncaught (in promise) Error: A listener indicated an asynchronous response by returning true, but the message channel closed before a response was received.) StackOverflow contributor, Chrostip Schaejn, suggested that this was caused by various Chrome extensions and could be resolved by whitelisting the relevant extension. This causal analysis was supported when the deployed site was tested in an Incognito Chrome broswer and the error did not occur. As such, no action (eg whitelisting) was taken.  |
-| Test outcome | PASS |
+| Test outcome | PASS |  
 
-### 3. Accesibility testing
+
+## 3. Accesibility testing
 ### Test label: Accessibility compatibility
 | Test step | Outcome |
 | --- | --- |
@@ -233,14 +247,15 @@ All tests peformed on 'bluebindy.github.io/residency-checker/' on Chrome, Safari
 | Test outcome | PASS |
 
 
-### 4. Validator Testing
+## 4. Validator Testing
 ### CSS validator testing
 | Test step | Outcome |
 | --- | --- |
 | Test action | Test code using Jigsaw validator|
 | Expected outcome | Validation passed with no errors and ideally no warnings (desired not essential.) |
 | Notes | None to add |
-| Test outcome | PASS |
+| Test outcome | PASS |  
+
 
 ### HTML validator testing
 | Test step | Outcome |
@@ -248,15 +263,16 @@ All tests peformed on 'bluebindy.github.io/residency-checker/' on Chrome, Safari
 | Test action | Perform a W3 HTML validation test on website page |
 | Expected outcome | W3 HTML validation passed with zero errors and ideally no warnings (desired not essential) |
 | Notes | 1) W3 Validator returns multiple Info notices regarding trailing slashes on void elements. These trailing slashes are inserted by the Prettier extension in Glitch when code is uploaded for formatting and code length shortening. Despite the W3 Info notice, they were left in place after testing that the potential clash with unquoted attribute values was not causing the website to malfunction. A second W3 Validator error regarding the for attributes in labels was reported. This was found to be a coding syntax error and was fixed and found to be resolved on subsequent testing.  |
-| Test outcome | PASS after modifications. |
+| Test outcome | PASS after modifications. |  
+
 
 ### Javascript validator testing
 | Test step | Outcome |
 | --- | --- |
 | Test action | Perform a JSHint validation test |
 | Expected outcome | Validation passed with zero issues and ideally no warnings (desired but not essential.) |
-| Notes | JSHint was configured for New JavaScript Features (ES6) to prevent the ES6 warnings that occured without that configuration. |
-| Test outcome | PASS |
+| Notes | JSHint was configured for New JavaScript Features (ES6) to prevent the ES6 warnings that occured without that configuration. Initial testing produced an unused variable warning. This was rectified by swapping an HTML onsubmit attribute for a JS eventListener. |
+| Test outcome | PASS |  
 
 
 # Acknowledgements and Copyright
