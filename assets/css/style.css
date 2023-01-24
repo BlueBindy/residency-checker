@@ -104,6 +104,10 @@ div.final-year {
     display: table-row;
 }
 
+.input-field {
+    max-width: 50px;
+}
+
 /*styling for responsivity*/
 @media screen and (max-width: 540px) {
     input {
