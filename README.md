@@ -10,11 +10,10 @@ Several screenshots of the website can be found below illustrating the progressi
 
 
 ## Page on load
-This screenshot is what a user will see before they have entered any data. They can read an introduction to the website at the top of the page. They have input boxes to enter their data; an information icon presenting (on mouseover) an explanation of limits on the timeframe available for eligible days; and a submit button. If a user enters invalid data (that is, data that is less than 0 or greater than 366) and clicks submit they are presented with an alert asking them to adjust their entries to the valid range. If a user fails to enter residential days in the compulsory sections (the current calendar year and also the last 365 days continuous residence section) they receive an alert asking them to rectify their entries.  
+This screenshot is what a user will see before they have entered any data. They can read an introduction to the website at the top of the page. They have input boxes to enter their data; an information icon presenting (on mouseover) an explanation of limits on the timeframe available for eligible days; and a submit button. If a user enters invalid data (that is, data that is less than 0 or greater than 366) and clicks submit they are presented with an alert asking them to adjust their entries to the valid range. If a user fails to enter residential days in the compulsory sections (the current calendar year and also the last 365 days continuous residence section) they receive an alert asking them to rectify their entries.
 
 
 ![Screenshot of website on page load](/docs/docs-images/screenshot-preuse.png "Website screenshot on page  load")
-
 ## Page on submit
 This screenshot is taken after a user has entered sample residential days, hit submit and received their summary results. In this example, residential days have been entered for the most recent calendar year as well as the last 365 day period. Results of their eligibility have been presented in a box that appears on click of the submit button. The content of this box is not available until valid entries have been made and submit is clicked. When the screen is refreshed the page reloads with all entries cleared and summary results removed. 
 
@@ -262,7 +261,7 @@ All tests peformed on 'bluebindy.github.io/residency-checker/' on Chrome, Safari
 | --- | --- |
 | Test action | Perform a W3 HTML validation test on website page |
 | Expected outcome | W3 HTML validation passed with zero errors and ideally no warnings (desired not essential) |
-| Notes | 1) W3 Validator returns multiple Info notices regarding trailing slashes on void elements. These trailing slashes are inserted by the Prettier extension in Glitch when code is uploaded for formatting and code length shortening. Despite the W3 Info notice, they were left in place after testing that the potential clash with unquoted attribute values was not causing the website to malfunction. A second W3 Validator error regarding the for attributes in labels was reported. This was found to be a coding syntax error and was fixed and found to be resolved on subsequent testing.  |
+| Notes | 1) W3 Validator returns multiple Info notices regarding trailing slashes on void elements. These trailing slashes are inserted by the Prettier extension in Glitch when code is uploaded for formatting and code length shortening. Despite the W3 Info notice, they were left in place after testing that the potential clash with unquoted attribute values was not causing the website to malfunction. 2) A second W3 Validator error regarding the for attributes in labels was reported. This was found to be a coding syntax error and was fixed and found to be resolved on subsequent testing.  |
 | Test outcome | PASS after modifications. |  
 
 
